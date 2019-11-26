@@ -44,6 +44,8 @@ public class Movement : MonoBehaviour
     public Transform dropPoint;
     public bool forward = true;
 
+    bool holdingTrolley;
+
 
     // Start is called before the first frame update
     void Start()
@@ -135,16 +137,24 @@ public class Movement : MonoBehaviour
         {
             
 
-            if (Input.GetMouseButtonDown(0) && Input.GetMouseButtonDown(1))
+            if (Input.GetMouseButton(0) && Input.GetMouseButton(1))
             {
-                
-                   
-                waitTimer = 0f;
-                state = HandState.Trolley;
-                    
+                    if (holdingTrolley == false)
+                    {
+                        state = HandState.Trolley;
 
-                trolleyModel = info.collider.gameObject;
-                trolleyModel.GetComponent<MaterialReference>().SetGlow(false);
+
+                        waitTimer = 0f;
+
+
+
+                        trolleyModel = info.collider.gameObject;
+                        trolleyModel.GetComponent<MaterialReference>().SetGlow(false);
+
+                        holdingTrolley = true;
+
+                    }
+                    
 
             }
             else
@@ -152,9 +162,13 @@ public class Movement : MonoBehaviour
                 if (state != HandState.Trolley){
                     trolleyModel = info.collider.gameObject;
                     trolleyModel.GetComponent<MaterialReference>().SetGlow(true);
+                    holdingTrolley = false;
                 }
                
             }
+
+
+            
 
 
         }    
@@ -162,15 +176,25 @@ public class Movement : MonoBehaviour
 
        else  if(info.collider.tag == "ShopItem")
         {
-            currentShopItem = info.collider.gameObject;
-            currentShopItem.GetComponent<MaterialReference>().SetGlow(true);
 
-            if (Input.GetMouseButtonDown(0))
-            {
-                state = HandState.Item;
-                
-                //currentShopItem.transform.position = dropPoint.transform.position;
-            }
+                currentShopItem = info.collider.gameObject;
+
+                if (info.distance < 9)
+                {
+                    
+                    currentShopItem.GetComponent<MaterialReference>().SetGlow(true);
+
+                   
+
+                    if (Input.GetMouseButtonDown(0))
+                    {
+
+
+                        state = HandState.Item;
+
+                        //currentShopItem.transform.position = dropPoint.transform.position;
+                    }
+                }
         }
         else
         {
@@ -190,7 +214,7 @@ public class Movement : MonoBehaviour
         }
 
 
-        if (!Input.GetMouseButton(0) && !Input.GetMouseButton(1))
+        if (!Input.GetMouseButton(0) || !Input.GetMouseButton(1))
         {
           if(state == HandState.Trolley)
             state = HandState.Nothing;
