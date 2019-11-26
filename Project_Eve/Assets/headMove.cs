@@ -5,7 +5,7 @@ using UnityEngine;
 public class headMove : MonoBehaviour
 {
 
-    public GameObject target;
+   
 
     // Start is called before the first frame update
     void Start()
@@ -17,9 +17,55 @@ public class headMove : MonoBehaviour
     void Update()
     {
 
-        //transform.rotation = Quaternion.Lerp(transform.rotation, target.transform.rotation, 0.5f);
+        float x = 0;
 
-        transform.LookAt(target.transform);
+        if (Input.GetMouseButton(0) && Input.GetMouseButton(1))
+        {
+            x = Mathf.Clamp(Input.GetAxis("Mouse X"), -2f, 2f);
+
+
+            if (transform.localRotation.y * Mathf.Rad2Deg < -15)
+            {
+
+                transform.Rotate(0, 0.05f, 0);
+
+            }
+            else if (transform.localRotation.y * Mathf.Rad2Deg > 18)
+            {
+
+                transform.Rotate(0, -0.05f, 0);
+
+            }
+            else
+            {
+
+                transform.Rotate(0, x, 0);
+
+            }
+
+
+        }
+        else
+        {
+            x = Input.GetAxis("Mouse X") * 3f;
+            transform.Rotate(0, x, 0);
+
+
+        }
+
+     
+        
+
+       
+
+        //if(Mathf.Abs(transform.rotation.eulerAngles.y)> 0)
+        //{
+        //    transform.Rotate(0, -transform.rotation.eulerAngles.y/10, 0);
+        //}
+        
+
+
+        
 
     }
 }

@@ -2,12 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TrolleyPos : MonoBehaviour
+public class yLook : MonoBehaviour
 {
-
-    public GameObject pos;
-
-
     // Start is called before the first frame update
     void Start()
     {
@@ -18,10 +14,16 @@ public class TrolleyPos : MonoBehaviour
     void Update()
     {
 
-        transform.position = pos.transform.position;
+        float x = 0;
 
 
-        
+        x = Input.GetAxis("Mouse Y");
+
+       
+
+
+
+        transform.Rotate(0, 0, x);
 
     }
 }

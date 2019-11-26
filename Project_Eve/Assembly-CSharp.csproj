@@ -55,7 +55,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\castorRot.cs" />
      <Compile Include="Assets\headMove.cs" />
      <Compile Include="Assets\MoveTest.cs" />
      <Compile Include="Assets\ObjectComparer.cs" />
@@ -63,7 +62,9 @@
      <Compile Include="Assets\ShopObject.cs" />
      <Compile Include="Assets\ShopObjectReference.cs" />
      <Compile Include="Assets\TrolleyPos.cs" />
+     <Compile Include="Assets\trolleyRot.cs" />
      <Compile Include="Assets\wheelRot.cs" />
+     <Compile Include="Assets\yLook.cs" />
  <Reference Include="Unity.Timeline.Editor">
  <HintPath>C:/Users/ATKja/Documents/Unity/ProjectShop/Project_Eve/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
  </Reference>

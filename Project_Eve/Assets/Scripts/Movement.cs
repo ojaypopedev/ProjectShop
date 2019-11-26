@@ -11,26 +11,24 @@ public class Movement : MonoBehaviour
 
     public float maxSpeed;
 
-    public Camera mCam;
+    public GameObject trolley;
+    public GameObject pCamera;
 
-    public GameObject testPos;
+    public GameObject leftH;
+    public GameObject rightH;
 
-    public Vector2 direction;
 
-    Vector2 mPos;
-
-    Vector3 targetPos;
-
-    Vector3 startPos;
-
-    Vector2 ScreenCenter;
 
     // Start is called before the first frame update
     void Start()
     {
 
         rb = GetComponent<Rigidbody>();
-        startPos = transform.localPosition;
+
+
+        Cursor.lockState = CursorLockMode.Locked;
+
+        speed = 0;
 
     }
 
@@ -38,37 +36,83 @@ public class Movement : MonoBehaviour
     void FixedUpdate()
     {
 
-      
-
-        
+        // rb.AddForce(trolley.transform.forward * speed);
 
 
-        direction = (ScreenCenter - mPos);
-
-
-        Vector3 targetPos = (new Vector3(20, -direction.y/1000, direction.x/1000));
-
-        print(targetPos);
-
-        testPos.transform.localPosition = targetPos;
+       
 
 
         if (Input.GetMouseButton(0) && Input.GetMouseButton(1))
         {
-            if (rb.velocity.magnitude < maxSpeed)
+            rightH.SetActive(false);
+            leftH.SetActive(false);
+            rb.velocity = pCamera.transform.forward * speed;
+
+            if (speed < maxSpeed)
             {
 
-                rb.AddForce((new Vector3(targetPos.x, 0, targetPos.z) - transform.position) * speed);
-
-
-                //GameObject.Find("Target").transform.position - transform.position).normalized* speed
+                speed += 0.5f;
             }
+            else
+            {
+
+                speed = maxSpeed;
+            }
+
+        } else if (Input.GetMouseButton(0) == true && Input.GetMouseButton(1) == false){
+
+            rb.velocity = trolley.transform.forward * speed;
+            if (speed < maxSpeed)
+            {
+
+                speed += 0.5f;
+            }
+            else
+            {
+
+                speed = maxSpeed;
+            }
+
+            rightH.SetActive(true);
+
+
+        }
+        else if (Input.GetMouseButton(1) == true && Input.GetMouseButton(0) == false)
+        {
+            rb.velocity = trolley.transform.forward * speed;
+            if (speed < maxSpeed)
+            {
+
+                speed += 0.5f;
+            }
+            else
+            {
+
+                speed = maxSpeed;
+            }
+
+            leftH.SetActive(true);
+
         }
 
-        
-            
 
-        
+        else
+        {
+
+            rb.velocity = trolley.transform.forward * speed;
+            if (speed > 0) {
+                speed -= maxSpeed/0.5f * Time.deltaTime;
+
+            }
+
+            if(speed < 0)
+            {
+                speed = 0;
+            }
+
+            rightH.SetActive(false);
+            leftH.SetActive(false);
+        }
 
     }
 }
