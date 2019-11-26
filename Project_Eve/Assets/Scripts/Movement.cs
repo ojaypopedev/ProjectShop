@@ -42,6 +42,8 @@ public class Movement : MonoBehaviour
     float waitTimer = 0.5f;
 
     public Transform dropPoint;
+    public bool forward = true;
+
 
     // Start is called before the first frame update
     void Start()
@@ -113,11 +115,11 @@ public class Movement : MonoBehaviour
 
     void GetInputs()
     {
-        int handsDownAsInt = 0;
-        if (Input.GetMouseButton(0)) handsDownAsInt += 1;
-        if (Input.GetMouseButton(1)) handsDownAsInt += 2;
+        //int handsDownAsInt = 0;
+        //if (Input.GetMouseButton(0)) handsDownAsInt += 1;
+        //if (Input.GetMouseButton(1)) handsDownAsInt += 2;
 
-        handsOnTrolley = (HandsOnTrolley)handsDownAsInt;
+        //handsOnTrolley = (HandsOnTrolley)handsDownAsInt;
  
 
         if (state == HandState.Nothing)
@@ -133,10 +135,12 @@ public class Movement : MonoBehaviour
         {
             
 
-            if (Input.GetMouseButtonDown(0))
+            if (Input.GetMouseButtonDown(0) && Input.GetMouseButtonDown(1))
             {
-                    waitTimer = 0f;
-                 state = HandState.Trolley;
+                
+                   
+                waitTimer = 0f;
+                state = HandState.Trolley;
                     
 
                 trolleyModel = info.collider.gameObject;
@@ -186,7 +190,7 @@ public class Movement : MonoBehaviour
         }
 
 
-        if (Input.GetMouseButtonUp(0))
+        if (!Input.GetMouseButton(0) && !Input.GetMouseButton(1))
         {
           if(state == HandState.Trolley)
             state = HandState.Nothing;
@@ -274,7 +278,7 @@ public class Movement : MonoBehaviour
         }
         else
         {
-            rb.velocity = pCamera.transform.forward * speed;
+            rb.velocity = pCamera.transform.forward * speed*(forward?1:-1);
 
             if (speed < maxSpeed)
             {
