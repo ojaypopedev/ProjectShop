@@ -5,5 +5,6 @@ using Shop;
 public class ShopObjectReference : MonoBehaviour
 {
     public ShopObject shopTags;
+ 
     
 }
