@@ -17,6 +17,8 @@ public class CompareOnCollision : MonoBehaviour
     {
         if (collision.gameObject.GetComponent<ShopObjectReference>())
         {
+            collision.transform.SetParent(transform);
+
             ShopObjectReference reference = collision.gameObject.GetComponent<ShopObjectReference>();
 
             comparer.toCompareToRequest = reference;

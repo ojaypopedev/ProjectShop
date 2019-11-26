@@ -21,21 +21,15 @@ public class trolleyRot : MonoBehaviour
     {
 
 
-        if (Input.GetMouseButton(0) && Input.GetMouseButton(1))
-        {
+       // if (Input.GetMouseButton(0) && Input.GetMouseButton(1))
+        
             if (moveVel.GetComponent<Rigidbody>().velocity.magnitude > 0.5f)
             {
                 transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.LookRotation(moveVel.GetComponent<Rigidbody>().velocity), 2f*Time.deltaTime);
             }
            
 
-        }
-        else
-        {
-
-
-
-        }
+    
 
 
 

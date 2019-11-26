@@ -14,19 +14,42 @@ public class Movement : MonoBehaviour
     public GameObject trolley;
     public GameObject pCamera;
 
-    public GameObject leftH;
-    public GameObject rightH;
+    public GameObject handContainer;
+    public GameObject RightHand;
+     Vector3 rightHandStartPoint;
 
-    public Animator[] hands;
+    public GameObject LeftHand;
+     Vector3 leftHandStartPoint;
+
+
+    GameObject handChoice;
+
+    RaycastHit info = new RaycastHit();
+
+    public Camera rayCam;
 
 
     public enum HandsOnTrolley { None, Left, Right, Both};
     public HandsOnTrolley handsOnTrolley = HandsOnTrolley.None;
 
+    private GameObject trolleyModel;
+
+    private GameObject currentShopItem;
+
+    public enum HandState {Nothing, Trolley, Item};
+    public HandState state = HandState.Nothing;
+
+    float waitTimer = 0.5f;
+
+    public Transform dropPoint;
+
     // Start is called before the first frame update
     void Start()
     {
         Initialize();
+
+        rightHandStartPoint = RightHand.transform.localPosition;
+        leftHandStartPoint = LeftHand.transform.localPosition;
     }
 
     
@@ -36,8 +59,6 @@ public class Movement : MonoBehaviour
         GetInputs();
      
         MovementContainer();
-
-        DoAnimation();
 
         #region Old Code
         //if (Input.GetMouseButton(0) && Input.GetMouseButton(1))
@@ -97,55 +118,178 @@ public class Movement : MonoBehaviour
         if (Input.GetMouseButton(1)) handsDownAsInt += 2;
 
         handsOnTrolley = (HandsOnTrolley)handsDownAsInt;
+ 
+
+        if (state == HandState.Nothing)
+        {
+          
+            Ray ray = new Ray(rayCam.transform.position, rayCam.transform.forward);
+            Physics.Raycast(ray, out info);
+
+        }
+
+        if(info.collider)
+        if (info.collider.tag == "Trolley")
+        {
+            
+
+            if (Input.GetMouseButtonDown(0))
+            {
+                    waitTimer = 0f;
+                 state = HandState.Trolley;
+                    
+
+                trolleyModel = info.collider.gameObject;
+                trolleyModel.GetComponent<MaterialReference>().SetGlow(false);
+
+            }
+            else
+            {
+                if (state != HandState.Trolley){
+                    trolleyModel = info.collider.gameObject;
+                    trolleyModel.GetComponent<MaterialReference>().SetGlow(true);
+                }
+               
+            }
+
+
+        }    
+      
+
+       else  if(info.collider.tag == "ShopItem")
+        {
+            currentShopItem = info.collider.gameObject;
+            currentShopItem.GetComponent<MaterialReference>().SetGlow(true);
+
+            if (Input.GetMouseButtonDown(0))
+            {
+                state = HandState.Item;
+                
+                //currentShopItem.transform.position = dropPoint.transform.position;
+            }
+        }
+        else
+        {
+            if (currentShopItem)
+            {
+                currentShopItem.GetComponent<MaterialReference>().SetGlow(false);
+                currentShopItem = null;
+            }
+            if (trolleyModel)
+            {
+
+                trolleyModel.GetComponent<MaterialReference>().SetGlow(false);
+            }
+
+            state = HandState.Nothing;
+
+        }
+
+
+        if (Input.GetMouseButtonUp(0))
+        {
+          if(state == HandState.Trolley)
+            state = HandState.Nothing;
+        }
+
+        handContainer.GetComponent<Animator>().SetBool("OnTrolley", state == HandState.Trolley);
+
+        if(state == HandState.Item)
+        {
+            print(123);
+
+
+            if (!handChoice)
+            {
+                float dist = Vector3.Distance(currentShopItem.transform.position, LeftHand.transform.position);
+                if (dist < Vector3.Distance(currentShopItem.transform.position, RightHand.transform.position))
+                {
+                    handChoice = LeftHand;
+                }
+                else
+                {
+                    handChoice = RightHand;
+                }
+            }
+
+            if(Vector3.Distance(handChoice.transform.position, currentShopItem.transform.position)< 0.5f)
+            {
+                currentShopItem.GetComponent<Rigidbody>().useGravity = false;
+                currentShopItem.transform.SetParent(handChoice.transform);
+                handChoice.transform.position = Vector3.Lerp(handChoice.transform.position, dropPoint.position, 10*Time.deltaTime);
+
+                if(Vector3.Distance(handChoice.transform.position, dropPoint.position) < 0.1f){
+                    currentShopItem.GetComponent<Rigidbody>().useGravity = true;
+                    currentShopItem.transform.SetParent(null);
+
+                    state = HandState.Nothing;
+                }
+
+            }
+            else
+            {
+
+                handChoice.transform.position = Vector3.Lerp(handChoice.transform.position, currentShopItem.transform.position, 10 * Time.deltaTime);
+            }
+        }
+        else
+        {
+            RightHand.transform.localPosition = Vector3.Lerp(RightHand.transform.localPosition, rightHandStartPoint, 5*Time.deltaTime);
+            LeftHand.transform.localPosition = Vector3.Lerp(LeftHand.transform.localPosition, leftHandStartPoint, 5 * Time.deltaTime);
+            handChoice = null;
+        }
+
 
     }
 
-    void DoAnimation()
-    {
-        hands[0].SetBool("Raise", (handsOnTrolley == HandsOnTrolley.Right) || (handsOnTrolley == HandsOnTrolley.None));
-        hands[1].SetBool("Raise", (handsOnTrolley == HandsOnTrolley.Left) || (handsOnTrolley == HandsOnTrolley.None));
-    }
+
 
     #region Movement Methods
 
     void MovementContainer()
     {
 
-        switch (handsOnTrolley)
+        switch (state)
         {
-            case HandsOnTrolley.None:
+            case HandState.Nothing:
                 NoTrolleyMovement();
                 break;
-            case HandsOnTrolley.Left:
-                OneHandMovement(HandsOnTrolley.Left);
-                break;
-            case HandsOnTrolley.Right:
-                OneHandMovement(HandsOnTrolley.Right);
-                break;
-            case HandsOnTrolley.Both:
+            case HandState.Trolley:
                 NormalMovement();
+                break;
+            case HandState.Item:
                 break;
             default:
                 break;
         }
+
+  
     }
 
     void NormalMovement()
     {
-        rightH.SetActive(false);
-        leftH.SetActive(false);
-        rb.velocity = pCamera.transform.forward * speed;
-
-        if (speed < maxSpeed)
+       if(waitTimer < 0.5f)
         {
-
-            speed += 0.5f;
+            waitTimer += Time.deltaTime;
         }
         else
         {
+            rb.velocity = pCamera.transform.forward * speed;
 
-            speed = maxSpeed;
+            if (speed < maxSpeed)
+            {
+
+                speed += 0.5f;
+            }
+            else
+            {
+
+                speed = maxSpeed;
+            }
         }
+        
+
+      
     }
 
     void OneHandMovement(HandsOnTrolley mode)
@@ -162,19 +306,15 @@ public class Movement : MonoBehaviour
             speed = maxSpeed;
         }
 
-        if (mode == HandsOnTrolley.Left)
-        {
-            rightH.SetActive(true);
-        }
-        else
-        {
-            leftH.SetActive(true);
-        }
+        
     }
 
     void NoTrolleyMovement()
     {
-        rb.velocity = trolley.transform.forward * speed;
+        Vector3 temp = trolley.transform.forward;
+        temp.y = 0;
+
+        rb.velocity = temp * speed;
         if (speed > 0)
         {
             speed -= maxSpeed / 0.5f * Time.deltaTime;
@@ -186,8 +326,7 @@ public class Movement : MonoBehaviour
             speed = 0;
         }
 
-        rightH.SetActive(false);
-        leftH.SetActive(false);
+        
     }
 
     #endregion

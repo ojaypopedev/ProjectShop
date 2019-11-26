@@ -63,7 +63,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\headMove.cs" />
+    <Compile Include="Assets\MaterialReference.cs" />
     <Compile Include="Assets\MoveTest.cs" />
+    <Compile Include="Assets\NewCameraScript.cs" />
     <Compile Include="Assets\ObjectComparer.cs" />
     <Compile Include="Assets\Scripts\Movement.cs" />
     <Compile Include="Assets\Scripts\Oliver's New Scripts\CompareOnCollision.cs" />
