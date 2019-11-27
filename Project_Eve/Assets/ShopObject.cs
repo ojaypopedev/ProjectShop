@@ -10,6 +10,7 @@ namespace Shop
     {
         Red, Yellow, Blue, Purple, Orange, Green,
         Sphere, Cube, Torus, Cylinder, Cone,
+        shirt,
 
 
 
