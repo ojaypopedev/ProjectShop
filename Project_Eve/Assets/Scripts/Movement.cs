@@ -303,6 +303,7 @@ public class Movement : MonoBehaviour
         else
         {
             rb.velocity = pCamera.transform.forward * speed*(forward?1:-1);
+            rb.velocity = new Vector3(rb.velocity.x, 0, rb.velocity.z);
 
             if (speed < maxSpeed)
             {
