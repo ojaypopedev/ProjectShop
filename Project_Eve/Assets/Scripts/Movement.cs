@@ -15,6 +15,8 @@ public class Movement : MonoBehaviour
     public GameObject pCamera;
 
     public GameObject handContainer;
+    GameObject handChoice;
+    public TargetTransform[] targetTransforms;
     public GameObject RightHand;
 
     List<GameObject> ItemsInTrolley = new List<GameObject>();
@@ -25,7 +27,7 @@ public class Movement : MonoBehaviour
      Vector3 leftHandStartPoint;
 
 
-    GameObject handChoice;
+  
 
     RaycastHit info = new RaycastHit();
 
@@ -65,6 +67,9 @@ public class Movement : MonoBehaviour
     
     void FixedUpdate()
     {
+
+
+        print(state.ToString());
 
         GetInputs();
      
@@ -236,10 +241,6 @@ public class Movement : MonoBehaviour
             if (state == HandState.Item)
             {
 
-
-                print(123);
-
-
                 if (!handChoice)
                 {
                     float dist = Vector3.Distance(currentShopItem.transform.position, LeftHand.transform.position);
@@ -251,6 +252,8 @@ public class Movement : MonoBehaviour
                     {
                         handChoice = RightHand;
                     }
+
+
                 }
 
 
@@ -259,6 +262,7 @@ public class Movement : MonoBehaviour
                 if (Vector3.Distance(handChoice.transform.position, currentShopItem.transform.position) < 0.5f || picked == true)
                 {
                     picked = true;
+
 
                     if (currentShopItem.GetComponent<Rigidbody>() == false)
                     {
@@ -279,7 +283,7 @@ public class Movement : MonoBehaviour
                         if (Vector3.Distance(handChoice.transform.position, dropPoint.position) < 0.3f)
                         {
                             handChoice.transform.position = dropPoint.position;
-                            currentShopItem.GetComponent<Collider>().enabled = true;                            
+                            currentShopItem.GetComponent<Collider>().enabled = true;
                             currentShopItem.GetComponent<Rigidbody>().useGravity = true;
                             currentShopItem.layer = 11;
                             ItemsInTrolley.Add(currentShopItem);
@@ -293,6 +297,8 @@ public class Movement : MonoBehaviour
                 }
                 else if (picked == false)
                 {
+                  
+                 
 
                     handChoice.transform.position = Vector3.Lerp(handChoice.transform.position, currentShopItem.transform.position, 10 * Time.deltaTime);
 
@@ -300,6 +306,8 @@ public class Movement : MonoBehaviour
             }
             else
             {
+
+              
                 RightHand.transform.localPosition = Vector3.Lerp(RightHand.transform.localPosition, rightHandStartPoint, 5 * Time.deltaTime);
                 LeftHand.transform.localPosition = Vector3.Lerp(LeftHand.transform.localPosition, leftHandStartPoint, 5 * Time.deltaTime);
                 handChoice = null;
@@ -335,7 +343,11 @@ public class Movement : MonoBehaviour
 
     void NormalMovement()
     {
-       if(waitTimer < 0.5f)
+
+       // handContainer.transform.position = Vector3.MoveTowards(handContainer.transform.position, targetTransforms[1].position, 0.5f);
+       // handContainer.transform.rotation = Quaternion.Euler(Vector3.MoveTowards(handContainer.transform.rotation.eulerAngles, targetTransforms[1].rotation, 0.5f));
+
+        if (waitTimer < 0.5f)
         {
             waitTimer += Time.deltaTime;
         }
@@ -379,6 +391,11 @@ public class Movement : MonoBehaviour
 
     void NoTrolleyMovement()
     {
+
+
+       // handContainer.transform.position = Vector3.MoveTowards(handContainer.transform.position, targetTransforms[0].position, 0.5f);
+       // handContainer.transform.rotation = Quaternion.Euler(Vector3.MoveTowards(handContainer.transform.rotation.eulerAngles, targetTransforms[0].rotation, 0.5f));
+
         Vector3 temp = trolley.transform.forward;
         temp.y = 0;
 
@@ -442,6 +459,14 @@ public class Movement : MonoBehaviour
 
     }
 
+
+    [System.Serializable]
+    public struct TargetTransform
+    {
+        public Vector3 position;
+        public Vector3 rotation;
+        public Vector3 scale;
+    }
 
 
 }
