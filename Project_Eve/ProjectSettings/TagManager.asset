@@ -6,7 +6,6 @@ TagManager:
   tags:
   - Trolley
   - ShopItem
-  - InTrolley
   layers:
   - Default
   - TransparentFX
