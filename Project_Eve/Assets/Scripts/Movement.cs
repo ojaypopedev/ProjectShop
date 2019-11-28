@@ -13,6 +13,7 @@ public class Movement : MonoBehaviour
 
     public GameObject trolley;
     public GameObject pCamera;
+    public GameObject trolleyRot;
 
     public GameObject handContainer;
     GameObject handChoice;
@@ -355,6 +356,8 @@ public class Movement : MonoBehaviour
         {
             rb.velocity = pCamera.transform.forward * speed*(forward?1:-1);
             rb.velocity = new Vector3(rb.velocity.x, 0, rb.velocity.z);
+
+            //trolley.transform.localRotation = Quaternion.Euler(0, trolley.transform.localRotation.y, trolleyRot.transform.localRotation.y);
 
             if (speed < maxSpeed)
             {

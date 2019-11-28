@@ -5,7 +5,6 @@ using UnityEngine;
 public class trolleyRot : MonoBehaviour
 {
 
-    public GameObject xRot;
     public GameObject moveVel;
 
     Transform temp;
@@ -26,11 +25,12 @@ public class trolleyRot : MonoBehaviour
             if (moveVel.GetComponent<Rigidbody>().velocity.magnitude > 0.5f)
             {
                 transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.LookRotation(moveVel.GetComponent<Rigidbody>().velocity), 2f*Time.deltaTime);
+                
             }
-           
 
-    
 
+
+        print(Quaternion.LookRotation(moveVel.GetComponent<Rigidbody>().velocity));
 
 
 

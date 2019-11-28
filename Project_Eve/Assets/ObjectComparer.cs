@@ -19,6 +19,8 @@ public class ObjectComparer : MonoBehaviour
 
     private void Start()
     {
+
+        if(allRequests.Length!=0)
         CurrentRequest = allRequests[0];
     }
 
