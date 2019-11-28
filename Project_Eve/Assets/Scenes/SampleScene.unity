@@ -3017,14 +3017,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 888670766}
-  m_LocalRotation: {x: -0, y: -0, z: -8.526512e-11, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0.01710337, w: 0.9998538}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 619322887}
   m_Father: {fileID: 214650130557490346}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 1.96}
 --- !u!114 &888670768
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6125,6 +6125,7 @@ GameObject:
   - component: {fileID: 1477478372628775711}
   - component: {fileID: 1477478372628775710}
   - component: {fileID: 1477478372628775708}
+  - component: {fileID: 1477478372628775717}
   m_Layer: 8
   m_Name: New Trolley
   m_TagString: Trolley
@@ -6239,7 +6240,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   allRequests:
   - {fileID: 0}
-  CurrentRequest: {fileID: 0}
+  CurrentRequest: {fileID: 11400000, guid: 2251158c71b8dee44bc2110fcc2a0a32, type: 2}
   toCompareToRequest: {fileID: 0}
   doCompare: 0
   allDone: 0
@@ -6255,6 +6256,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 51944ef798a285f44a22f5704631c305, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1477478372628775717
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1477478372628775707}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 02382ef234d168f44a6546b550322b89, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  refToMove: {fileID: 1657098646}
 --- !u!33 &1658701995809329230
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -7289,6 +7303,7 @@ MonoBehaviour:
   leftHand: {fileID: 8833720299730363120}
   rightHand: {fileID: 1099543997}
   handCont: {fileID: 549293449}
+  Trolley: {fileID: 3259261753584511280}
   MaxXRot: 25
 --- !u!1001 &9201999452842870896
 PrefabInstance:

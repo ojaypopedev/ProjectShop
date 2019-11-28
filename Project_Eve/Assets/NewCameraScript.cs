@@ -15,6 +15,7 @@ public class NewCameraScript : MonoBehaviour
     public Transform leftHand;
     public Transform rightHand;
     public Transform handCont;
+    public Transform Trolley;
 
     public float MaxXRot = 25;
 
@@ -33,6 +34,7 @@ public class NewCameraScript : MonoBehaviour
     {
         stateHandler();
         CameraLook();
+        CameraTilt();
     }
 
     void stateHandler()
@@ -83,5 +85,13 @@ public class NewCameraScript : MonoBehaviour
 
 
         transform.LookAt(lookPoint);
+    }
+
+    void CameraTilt()
+    {
+
+        
+
+
     }
 }

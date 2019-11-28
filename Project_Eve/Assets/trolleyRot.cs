@@ -25,11 +25,15 @@ public class trolleyRot : MonoBehaviour
         
             if (moveVel.GetComponent<Rigidbody>().velocity.magnitude > 0.5f)
             {
-                transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.LookRotation(moveVel.GetComponent<Rigidbody>().velocity), 2f*Time.deltaTime);
+                Quaternion temp = Quaternion.Lerp(transform.rotation, Quaternion.LookRotation(moveVel.GetComponent<Rigidbody>().velocity), 2f*Time.deltaTime);
+
+                 transform.rotation = temp;
+
+             
             }
            
 
-    
+            
 
 
 
