@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 0}
-  m_Name: red shirt
+  m_Name: Blue cone
   m_EditorClassIdentifier: Assembly-CSharp:Shop:ShopObjectRequest
-  positiveTags: 000000000b000000
+  positiveTags: 020000000a000000
   negativeTags: 
-  RequestMessage: THIS IS RED AF BOI
+  RequestMessage: I need something that can go in me
   ReplyMessage: Default Reply, Wife.

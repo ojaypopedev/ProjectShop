@@ -2493,7 +2493,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8f1e1d5f4a9da5f41b6f8c6a721fd77d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  modeSelect: 0
+  modeSelect: 2
   tutorialList:
   - msg: DO YOU STILL LOVE ME?
     isWife: 1
@@ -2505,7 +2505,10 @@ MonoBehaviour:
     isWife: 0
   - msg: Dont forget to buy gifts lmao, I know you are bad
     isWife: 1
-  itemRequestList: []
+  itemRequestList:
+  - {fileID: 11400000, guid: 2251158c71b8dee44bc2110fcc2a0a32, type: 2}
+  - {fileID: 11400000, guid: b95e44e791a968f41b633e7e56b4add9, type: 2}
+  - {fileID: 11400000, guid: 6022acd41db503d458e3e469ae2fa365, type: 2}
   mController: {fileID: 2071897099}
 --- !u!4 &732048066
 Transform:
@@ -7312,7 +7315,7 @@ PrefabInstance:
     - target: {fileID: 3976064403565005485, guid: 8d68ef98c94ec6445b23c90e07711ba0,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.169
+      value: 0.4
       objectReference: {fileID: 0}
     - target: {fileID: 3976064403565005485, guid: 8d68ef98c94ec6445b23c90e07711ba0,
         type: 3}
@@ -7357,12 +7360,12 @@ PrefabInstance:
     - target: {fileID: 3976064403565005485, guid: 8d68ef98c94ec6445b23c90e07711ba0,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -0.061
+      value: -0.06
       objectReference: {fileID: 0}
     - target: {fileID: 3976064403565005485, guid: 8d68ef98c94ec6445b23c90e07711ba0,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0.009
+      value: 0.01
       objectReference: {fileID: 0}
     - target: {fileID: 3976064403565005485, guid: 8d68ef98c94ec6445b23c90e07711ba0,
         type: 3}
