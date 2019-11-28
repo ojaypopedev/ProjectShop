@@ -75,6 +75,7 @@
     <Compile Include="Assets\Scripts\transformObject.cs" />
     <Compile Include="Assets\ShopObject.cs" />
     <Compile Include="Assets\ShopObjectReference.cs" />
+    <Compile Include="Assets\ShowPhone.cs" />
     <Compile Include="Assets\TrolleyPos.cs" />
     <Compile Include="Assets\trolleyRot.cs" />
     <Compile Include="Assets\wheelRot.cs" />
