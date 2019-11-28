@@ -6,8 +6,8 @@ using Shop;
 public class ObjectComparer : MonoBehaviour
 {
 
-    [SerializeField] ShopObject[] allRequestsInOrder = new ShopObject[1];
-    [SerializeField]  ShopObject CurrentRequest;
+    [SerializeField] ShopObjectRequest[] allRequests;
+    [SerializeField] ShopObjectRequest CurrentRequest;
     private int index = 0;
     public ShopObjectReference toCompareToRequest;
 
@@ -19,32 +19,31 @@ public class ObjectComparer : MonoBehaviour
 
     private void Start()
     {
-        CurrentRequest = allRequestsInOrder[0];
+        CurrentRequest = allRequests[0];
     }
 
+    #region OldCode
+    //[ContextMenu("Compare")]
+    //public void TestCompare()
+    //{
+    //      print(123);
 
-    [ContextMenu("Compare")]
-    public void TestCompare()
-    {
-          print(123);
+    //    ShopObjectRequest requester = new ShopObjectRequest();
+    //    requester.toCompare = CurrentRequest;
 
-        ShopObjectRequest requester = new ShopObjectRequest();
-        requester.toCompare = CurrentRequest;
+    //    float percentage = requester.percentageComparison(toCompareToRequest.shopTags);
+    //    bool exact = requester.exactComparison(toCompareToRequest.shopTags);
+    //    string objectName = toCompareToRequest.shopTags.Name;
 
-        float percentage = requester.percentageComparison(toCompareToRequest.shopTags);
-        bool exact = requester.exactComparison(toCompareToRequest.shopTags);
-        string objectName = toCompareToRequest.shopTags.Name;
+    //    print(objectName + (exact ? (" is exactly matched") : ("is not an exact but is " + percentage.ToString() + "% match.")));
 
-        print(objectName + (exact ? (" is exactly matched") : ("is not an exact but is " + percentage.ToString() + "% match.")));
-
-    }
+    //}
+    #endregion
 
     public void Compare()
     {
-        ShopObjectRequest requester = new ShopObjectRequest();
-        requester.toCompare = CurrentRequest;
-
-        float percentage = requester.percentageComparison(toCompareToRequest.shopTags);
+           
+        float percentage = CurrentRequest.percentageComparison(toCompareToRequest.shopTags);
 
         if (percentage > percentageRequired)
         {
@@ -52,9 +51,9 @@ public class ObjectComparer : MonoBehaviour
 
             index++;
 
-            if(allRequestsInOrder.Length > index)
+            if(allRequests.Length > index)
             {
-                CurrentRequest = allRequestsInOrder[index];
+                CurrentRequest = allRequests[index];
             }
             else
             {
@@ -63,9 +62,6 @@ public class ObjectComparer : MonoBehaviour
                 allDone = true;
             }
         }
-
-
-
 
             if (percentage > percentageRequired) print("Object Reqs Met"); else print("Object Reqs Not Met");
     }
