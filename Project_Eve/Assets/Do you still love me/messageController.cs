@@ -44,12 +44,12 @@ public class messageController : MonoBehaviour{
     void AddMsg(string inputText, int c, bool isWifesText){
         GameObject temp;
         if (isWifesText){
-             temp = Instantiate(wife_msg_prefab);
+             temp = Instantiate(wife_msg_prefab, msgContainer.transform);
         }
         else{
-            temp = Instantiate(you_msg_prefab);
+            temp = Instantiate(you_msg_prefab, msgContainer.transform);
         }
-        temp.transform.parent = msgContainer.transform;
+        //temp.transform.parent = msgContainer.transform;
         temp.transform.position = spawnPos.position;
         temp.GetComponentInChildren<Text>().text = inputText + " " + c.ToString(); ;
         messages.Add(temp);

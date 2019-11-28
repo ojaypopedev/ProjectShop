@@ -1,5 +1,5 @@
 sceneSetups:
-- path: Assets/Do you still love me/Scenes/Do you still love me.unity
+- path: Assets/Scenes/SampleScene.unity
   isLoaded: 1
   isActive: 1
   isSubScene: 0
