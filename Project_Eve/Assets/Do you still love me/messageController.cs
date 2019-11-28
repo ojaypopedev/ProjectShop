@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using Shop;
 
 public class messageController : MonoBehaviour{
     public GameObject wife_msg_prefab;
@@ -19,13 +20,13 @@ public class messageController : MonoBehaviour{
 
     int c;
     void Update(){
-        if (Input.GetKeyDown(KeyCode.Space)){
-            c++;
-            int x = c % 2;
-            Debug.Log(x);
-            bool isWife = x != 0;
-            AddMsg("DO YOU STILL LOVE ME?", c, isWife);
-        }
+        //if (Input.GetKeyDown(KeyCode.Space)){
+        //    c++;
+        //    int x = c % 2;
+        //    Debug.Log(x);
+        //    bool isWife = x != 0;
+        //    AddMsg("DO YOU STILL LOVE ME?", c, isWife);
+        //}
         if (messages.Count >= 5){
             if (offScreenMsg){
                 Destroy(offScreenMsg);
@@ -52,6 +53,30 @@ public class messageController : MonoBehaviour{
         //temp.transform.parent = msgContainer.transform;
         temp.transform.position = spawnPos.position;
         temp.GetComponentInChildren<Text>().text = inputText + " " + c.ToString(); ;
+        messages.Add(temp);
+    }
+    //WIFE
+    public void AddMsg(ShopObjectRequest reqs){
+        
+         GameObject temp = Instantiate(wife_msg_prefab, msgContainer.transform);
+
+        //temp.transform.parent = msgContainer.transform;
+        temp.transform.position = spawnPos.position;
+        temp.GetComponentInChildren<Text>().text = reqs.RequestMessage;
+        messages.Add(temp);
+    }
+
+    public void AddMsg(bool isWifesText, string inputText){
+        GameObject temp;
+        if (isWifesText){
+            temp = Instantiate(wife_msg_prefab, msgContainer.transform);
+        }
+        else{
+            temp = Instantiate(you_msg_prefab, msgContainer.transform);
+        }
+        //temp.transform.parent = msgContainer.transform;
+        temp.transform.position = spawnPos.position;
+        temp.GetComponentInChildren<Text>().text = inputText;
         messages.Add(temp);
     }
 }
