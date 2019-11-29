@@ -8,9 +8,22 @@ namespace Shop
 {
     public enum ShopTag
     {
-        Red, Yellow, Blue, Purple, Orange, Green, brown,
+
+        //Colours
+        Red, Yellow, Blue, Purple, Orange, Green, Brown, White, Cola, Black, Grey,
+        //Primitives
         Sphere, Cube, Torus, Cylinder, Cone,
-        shirt, bear,
+        //clothes
+        Shirt, Cap, Hat, Ear, Muffs, Trousers, Shorts, Sandals, Boots, Shoes, Tie, Bowtie, 
+        Hoodie, Glasses,
+        //food
+        Ham, Turkey, Sausages, Steak, Potatoes, Mince, Pie, Broccoli, carrots,   
+        Parsnips, Aubergine, Leeks, Cauliflower, Onion, Sprouts, Drink,
+        //toys
+        Bear, Building, Blocks, Shape, Puzzle, Ring, Tower,
+        //other
+        Crackers, Christmas, Wine, Brandy, Soda, Cans, Bottle, Book, Camera, 
+
 
     }
 
