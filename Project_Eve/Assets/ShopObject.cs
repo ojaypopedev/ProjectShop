@@ -8,9 +8,9 @@ namespace Shop
 {
     public enum ShopTag
     {
-        Red, Yellow, Blue, Purple, Orange, Green,
+        Red, Yellow, Blue, Purple, Orange, Green, brown,
         Sphere, Cube, Torus, Cylinder, Cone,
-        shirt,
+        shirt, bear,
 
     }
 

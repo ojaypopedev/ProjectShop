@@ -5,7 +5,7 @@ using UnityEngine;
 public class Movement : MonoBehaviour
 {
 
-    Rigidbody rb;
+    public Rigidbody rb;
 
     public float speed;
 
@@ -19,7 +19,7 @@ public class Movement : MonoBehaviour
     public TargetTransform[] targetTransforms;
     public GameObject RightHand;
 
-    List<GameObject> ItemsInTrolley = new List<GameObject>();
+    public List<GameObject> ItemsInTrolley = new List<GameObject>();
 
      Vector3 rightHandStartPoint;
 
@@ -353,8 +353,11 @@ public class Movement : MonoBehaviour
         }
         else
         {
-            rb.velocity = pCamera.transform.forward * speed*(forward?1:-1);
+            float offSet = Random.Range(0, ItemsInTrolley.Count*1.1f);
+
+            rb.velocity = (pCamera.transform.forward * speed*(forward?1:-1));
             rb.velocity = new Vector3(rb.velocity.x, 0, rb.velocity.z);
+         
 
             if (speed < maxSpeed)
             {

@@ -6,7 +6,7 @@ public class NewCameraScript : MonoBehaviour
 {
 
     public Transform lookPoint;
-    public float lookSpeed = 2f;
+    public float lookSpeed = 1000f;
 
 
     public Movement moveRef;
@@ -16,10 +16,13 @@ public class NewCameraScript : MonoBehaviour
     public Transform rightHand;
     public Transform handCont;
     public Transform Trolley;
+    public Transform camPos;
 
     public float MaxXRot = 25;
 
     Movement.HandState state;
+
+    float offset= 1;
 
 
     bool inital = false;
@@ -46,38 +49,102 @@ public class NewCameraScript : MonoBehaviour
 
             if(state == Movement.HandState.Trolley)
             {
-                MaxXRot = 25;
+                MaxXRot = 50;
             }
             if(state == Movement.HandState.Nothing)
             {
-                MaxXRot = 50;
+                MaxXRot = 80;
             }
         }
     }
 
     void CameraLook()
     {
+        transform.position = new Vector3(camPos.position.x, 5f, camPos.position.z);
+
+        if(state == Movement.HandState.Trolley)
+        {
+          offset = moveRef.ItemsInTrolley.Count/10;
+
+            if (offset != 0)
+            {
+                lookSpeed = 1f / offset;
+            }
+
+        }
+
+        if(offset == 0)
+        {
+
+            offset = 1;
+
+        }
 
         if (state == Movement.HandState.Trolley || state == Movement.HandState.Nothing)
         {
-         
 
-            lookPoint.RotateAround(transform.position, Vector3.up, Input.GetAxis("Mouse X") * lookSpeed);
+            float xAxis = Mathf.Clamp(Input.GetAxis("Mouse X") * lookSpeed, -lookSpeed, lookSpeed);
+
+            print(xAxis);
+           
             rotatedAmount.x += Input.GetAxis("Mouse X");
             lookPoint.RotateAround(transform.position, transform.right, -Input.GetAxis("Mouse Y") * lookSpeed);
             rotatedAmount.y += Input.GetAxis("Mouse Y");
             Vector3 eulers = lookPoint.eulerAngles;
 
 
-            if (Mathf.Abs(rotatedAmount.x) > MaxXRot)
+
+            //90 is looking Straight
+
+            float lookAngle = Vector3.Angle(transform.right, Trolley.right) - 90;
+
+            
+
+           
+
+
+
+            if (lookAngle > MaxXRot || lookAngle < -MaxXRot)
             {
-                lookPoint.RotateAround(transform.position, Vector3.up, -Input.GetAxis("Mouse X") * lookSpeed);
-                rotatedAmount.x -= Input.GetAxis("Mouse X");
+                if (lookAngle > MaxXRot)
+                {
+                    if (Input.GetAxis("Mouse X") < 0)
+                    {
+                        lookPoint.RotateAround(transform.position, Vector3.up, xAxis * lookSpeed);
+                    }
+                }
+
+                if (lookAngle < MaxXRot)
+                {
+                    if (Input.GetAxis("Mouse X") > 0)
+                    {
+                        lookPoint.RotateAround(transform.position, Vector3.up, xAxis * lookSpeed);
+                    }
+                    
+                }
             }
-            if (Mathf.Abs(rotatedAmount.y) > 30)
+            else
+            {
+                lookPoint.RotateAround(transform.position, Vector3.up, xAxis * lookSpeed);
+
+            }
+
+            if (Mathf.Abs(rotatedAmount.y) > 30 * offset)
             {
                 lookPoint.RotateAround(transform.position, transform.right, Input.GetAxis("Mouse Y") * lookSpeed);
-                rotatedAmount.y -= Input.GetAxis("Mouse Y");
+               rotatedAmount.y -= Input.GetAxis("Mouse Y");
+            }
+
+            if (moveRef.rb.velocity.magnitude > 1)
+            {
+                GetComponent<Camera>().fieldOfView = 77 + moveRef.rb.velocity.magnitude/2;
+            }
+
+            if(GetComponent<Camera>().fieldOfView <= 77)
+            {
+
+                GetComponent<Camera>().fieldOfView = 77;
+
             }
 
         }
@@ -89,6 +156,20 @@ public class NewCameraScript : MonoBehaviour
 
     void CameraTilt()
     {
+
+
+        Vector3 diff = transform.forward - Trolley.forward;
+
+        float temp = 0;
+
+        if (state == Movement.HandState.Trolley)
+        { 
+
+            //transform.Rotate(0, 0, diff.x * 5);
+
+            temp = diff.x;
+
+        }
 
         
 
