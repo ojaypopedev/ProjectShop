@@ -35,7 +35,8 @@ namespace Shop
         Perfume, Soap, Shampoo, Scented, Clean, Toiletries, Poo,
 
         //New Stuff
-        KitchenStuff, Technology, Bricks, BingBong
+        KitchenStuff, Technology, Bricks, BingBong, Television, Headphones, Knives, aftershave, Portable,
+        Console, Pan,
 
     }
 
