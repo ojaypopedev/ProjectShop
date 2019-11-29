@@ -153,7 +153,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2fa67eda04dc8b1419e12087890216a7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shopTags: {fileID: 11400000, guid: 0915a4c06871fcc49b483f29a5ef8fe6, type: 2}
+  _toAdd: 
+  _editorTagLength: 0
+  shopObject: {fileID: 0}
 --- !u!114 &8159283956134194897
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -282,7 +284,7 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
 --- !u!65 &8867771922306353333
 BoxCollider:
   m_ObjectHideFlags: 0

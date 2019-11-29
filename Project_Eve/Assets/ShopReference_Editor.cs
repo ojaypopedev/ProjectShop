@@ -37,7 +37,7 @@ public class ShopReference_Editor : Editor
             {
                 tags += t.shopObject.Tags[i] + ", ";
             }
-            tags += tags += t.shopObject.Tags[t.shopObject.Tags.Length - 1] + ".";
+           tags += t.shopObject.Tags[t.shopObject.Tags.Length - 1] + ".";
 
             GUILayout.Label("Tags: " + tags);
 
@@ -106,11 +106,17 @@ public class ShopReference_Editor : Editor
 
             //AssetDatabase.CreateAsset()
 
+
         }
 
 
         ShopTag[] refactorTags(ShopTag[] current, int length)
         {
+
+            if (current == null )
+            {
+                current = new ShopTag[length];
+            }
 
             ShopTag[] newTags  = new ShopTag[length];
             if(current.Length < length)

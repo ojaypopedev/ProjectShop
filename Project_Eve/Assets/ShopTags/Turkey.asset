@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: da23d116b7199654eb40aa2b418186f4, type: 3}
   m_Name: Turkey
   m_EditorClassIdentifier: 
-  Name: 
-  Tags: 
+  Name: Turkey
+  Tags: 1f000000
