@@ -13,14 +13,23 @@ public class RequestList : MonoBehaviour{
         public bool isWife;
     }
 
+
     [Header("Tutorial")]
 
     [SerializeField] List<TutMessage> tutorialList;
     int tutCounter;
     [Header("CoreLoop")]
     public List<ShopObjectRequest> itemRequestList;
+    public List<ShopObjectRequest> inLevel;
+    public int index;
+    public ShopObjectRequest current;
+
+    public int RequestCount;
     [Header("Ref")]
-    [SerializeField] messageController mController;
+    [SerializeField]public  messageController mController;
+
+
+
 
 
     private void Update(){
@@ -34,9 +43,38 @@ public class RequestList : MonoBehaviour{
 
         }
         if (modeSelect == ModeSelect.challenge){
-            if (Input.GetKeyDown(KeyCode.Space)){
-                mController.AddMsg(itemRequestList[Random.Range(0, itemRequestList.Count)]);
+            
+            while(inLevel.Count < 5)
+            {
+                int toUse = Random.Range(0, itemRequestList.Count);
+
+                inLevel.Add(itemRequestList[toUse]);
+                itemRequestList.RemoveAt(toUse);
+
             }
+           
+            if(index < 5)
+            {
+                if(current != inLevel[index])
+                {
+                    GetComponent<GameLoop>().BumpScore();
+                    current = inLevel[index];
+                    mController.AddMsg(true, current.RequestMessage);
+
+                }
+
+               
+            }
+            else
+            {
+                current = null;
+                print("Win");
+            }
+
+
+
+            mController.AddMsg(itemRequestList[Random.Range(0, itemRequestList.Count)]);
+            
         }
     }
 }

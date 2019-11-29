@@ -15,6 +15,8 @@ public class CompareOnCollision : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
+        print(collision.gameObject.name);
+
         if (collision.gameObject.GetComponent<ShopObjectReference>())
         {
             collision.transform.SetParent(transform);

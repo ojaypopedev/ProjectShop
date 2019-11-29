@@ -63,6 +63,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Do you still love me\messageController.cs" />
+    <Compile Include="Assets\GameLoop.cs" />
     <Compile Include="Assets\headMove.cs" />
     <Compile Include="Assets\InheritLayer.cs" />
     <Compile Include="Assets\MaterialReference.cs" />

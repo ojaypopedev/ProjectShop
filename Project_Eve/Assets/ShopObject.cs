@@ -37,7 +37,6 @@ namespace Shop
         //New Stuff
         KitchenStuff, Technology, Bricks, BingBong
 
-
     }
 
   
@@ -85,9 +84,12 @@ namespace Shop
     }*/
 
 
-    [CreateAssetMenu()]
-    public class ShopObjectRequest : ScriptableObject
+    [System.Serializable]
+    public class ShopObjectRequest
     {
+
+        public string name;
+
         public ShopTag[] positiveTags;
         public ShopTag[] negativeTags;
         public string RequestMessage = "Default Request, Wife.";

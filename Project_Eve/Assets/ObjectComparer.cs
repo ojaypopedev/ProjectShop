@@ -6,7 +6,7 @@ using Shop;
 public class ObjectComparer : MonoBehaviour
 {
 
-    [SerializeField] ShopObjectRequest[] allRequests;
+    
     [SerializeField] ShopObjectRequest CurrentRequest;
     private int index = 0;
     public ShopObjectReference toCompareToRequest;
@@ -17,9 +17,21 @@ public class ObjectComparer : MonoBehaviour
 
     float percentageRequired = 70;
 
+
+    public RequestList list;
+
+    int incorrect = 0;
+
+    string[] incorrectMessages =
+    {
+        "No.", "Not Quite.", "Really...", "Not that.", "Wrong gift for the wrong person", "Hmmm... I dont think so", "Nope.", "Not That!", "You think you are funny dont you!",
+        "No chance", "No", "No! You dont have much time", "I dont think they would like that", "Maybe for you, but they would never want that", "Just get what I tell you to get",
+        "No, and quick, you dont have much time!"
+    };
+
     private void Start()
     {
-        CurrentRequest = allRequests[0];
+        list = FindObjectOfType<RequestList>();
     }
 
     #region OldCode
@@ -42,28 +54,35 @@ public class ObjectComparer : MonoBehaviour
 
     public void Compare()
     {
-           
+
+        CurrentRequest = list.current;
+
         float percentage = CurrentRequest.percentageComparison(toCompareToRequest.shopObject);
+
+        list.mController.AddMsg(false, "I got a " + toCompareToRequest.shopObject.name);
+
 
         if (percentage > percentageRequired)
         {
             print(toCompareToRequest.name + " was adequate.");
 
-            index++;
+            list.index++;
 
-            if(allRequests.Length > index)
+            list.mController.AddMsg(true, CurrentRequest.ReplyMessage);
+
+        }
+        else
+        {
+            list.mController.AddMsg(true, incorrectMessages[Mathf.RoundToInt(Random.Range(0,incorrectMessages.Length-1))]); // add variations to this
+            incorrect++;
+            if(incorrect == 2)
             {
-                CurrentRequest = allRequests[index];
-            }
-            else
-            {
-                CurrentRequest = null;
-                print("All Objects Found");
-                allDone = true;
+                incorrect = 0;
+                list.mController.AddMsg(CurrentRequest);
             }
         }
 
-            if (percentage > percentageRequired) print("Object Reqs Met"); else print("Object Reqs Not Met");
+        if (percentage > percentageRequired) print("Object Reqs Met"); else print("Object Reqs Not Met");
     }
 
 
