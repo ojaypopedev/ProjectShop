@@ -10,22 +10,36 @@ namespace Shop
     {
 
         //Colours
-        Red, Yellow, Blue, Purple, Orange, Green, Brown, White, Cola, Black, Grey,
+        Red, Yellow, Blue, Purple, Orange, Green, Brown, White, Cola, Black, Grey, MultiColoured, 
         //Primitives
         Sphere, Cube, Torus, Cylinder, Cone,
         //clothes
         Shirt, Cap, Hat, Ear, Muffs, Trousers, Shorts, Sandals, Boots, Shoes, Tie, Bowtie, 
-        Hoodie, Glasses,
+        Hoodie, Glasses, Clothes, 
         //food
         Ham, Turkey, Sausages, Steak, Potatoes, Mince, Pie, Broccoli, carrots,   
-        Parsnips, Aubergine, Leeks, Cauliflower, Onion, Sprouts, Drink,
+        Parsnips, Aubergine, Leeks, Cauliflower, Onion, Sprouts, Drink, Meat, Vegetable, OtherFood,
         //toys
-        Bear, Building, Blocks, Shape, Puzzle, Ring, Tower,
-        //other
-        Crackers, Christmas, Wine, Brandy, Soda, Cans, Bottle, Book, Camera, 
+        Bear, Building, Blocks, Shape, Puzzle, Ring, Tower, Simple, Complex, Toy, Game,
 
+        //other
+        Crackers, Christmas, Wine, Brandy, Soda, Cans, Bottle, Book, Camera, Alchohol, ChristmasDuck, Egg,
+
+        //Kitchen
+        Pots, Toaster, Kettle, Cup, Glass, Mug, Tea, Boiling,
+
+        //Technology
+        Recording, Computer, Music, Speaker, 
+
+        //toiletTries
+        Perfume, Soap, Shampoo, Scented, Clean, Toiletries, Poo,
+
+       //New Stuff
+       KitchenStuff, Technology, Bricks, BingBong
 
     }
+
+    
 
     [CreateAssetMenu()]
     public class ShopObject : ScriptableObject
