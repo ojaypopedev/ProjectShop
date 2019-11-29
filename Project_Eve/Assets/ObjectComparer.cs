@@ -43,7 +43,7 @@ public class ObjectComparer : MonoBehaviour
     public void Compare()
     {
            
-        float percentage = CurrentRequest.percentageComparison(toCompareToRequest.shopTags);
+        float percentage = CurrentRequest.percentageComparison(toCompareToRequest.shopObject);
 
         if (percentage > percentageRequired)
         {

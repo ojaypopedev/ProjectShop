@@ -4,6 +4,14 @@ using UnityEngine;
 using Shop;
 public class ShopObjectReference : MonoBehaviour
 {
-    public ShopObject shopTags;
+
+    //Editor Bits
+    public ShopTag[] _toAdd;
+    public int _editorTagLength;
+
+
+
+    
+    public ShopObject shopObject;
     
 }
