@@ -33,6 +33,8 @@ public class RequestList : MonoBehaviour{
 
 
     private void Update(){
+
+      
         if (modeSelect == ModeSelect.teach){
             if (Input.GetKeyDown(KeyCode.Space)){
                 mController.AddMsg(tutorialList[tutCounter].isWife, tutorialList[tutCounter].msg);
@@ -73,7 +75,7 @@ public class RequestList : MonoBehaviour{
 
 
 
-            mController.AddMsg(itemRequestList[Random.Range(0, itemRequestList.Count)]);
+           // mController.AddMsg(itemRequestList[Random.Range(0, itemRequestList.Count)]);
             
         }
     }

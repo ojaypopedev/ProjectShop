@@ -10,6 +10,7 @@ public class ObjectComparer : MonoBehaviour
     [SerializeField] ShopObjectRequest CurrentRequest;
     private int index = 0;
     public ShopObjectReference toCompareToRequest;
+    public GameObject toCompGO;
 
     [SerializeField] bool doCompare = false;
 
@@ -59,7 +60,7 @@ public class ObjectComparer : MonoBehaviour
 
         float percentage = CurrentRequest.percentageComparison(toCompareToRequest.shopObject);
 
-        list.mController.AddMsg(false, "I got a " + toCompareToRequest.shopObject.name);
+        list.mController.AddMsg(false, "I got a " + toCompGO.name);
 
 
         if (percentage > percentageRequired)
@@ -78,7 +79,7 @@ public class ObjectComparer : MonoBehaviour
             if(incorrect == 2)
             {
                 incorrect = 0;
-                list.mController.AddMsg(CurrentRequest);
+                list.mController.AddMsg(true, CurrentRequest.RequestMessage);
             }
         }
 

@@ -19,11 +19,15 @@ public class CompareOnCollision : MonoBehaviour
 
         if (collision.gameObject.GetComponent<ShopObjectReference>())
         {
+            Destroy(collision.gameObject.GetComponent<Rigidbody>());
+            Destroy(collision.gameObject.GetComponent<Collider>());
+
             collision.transform.SetParent(transform);
 
             ShopObjectReference reference = collision.gameObject.GetComponent<ShopObjectReference>();
 
             comparer.toCompareToRequest = reference;
+            comparer.toCompGO = collision.gameObject;
 
             if(!comparer.allDone)
             comparer.Compare();

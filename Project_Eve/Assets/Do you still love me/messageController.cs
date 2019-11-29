@@ -27,13 +27,18 @@ public class messageController : MonoBehaviour{
         //    bool isWife = x != 0;
         //    AddMsg("DO YOU STILL LOVE ME?", c, isWife);
         //}
-        if (messages.Count >= 5){
+        while (messages.Count >= 5){
+
+            offScreenMsg = messages[0];
+
             if (offScreenMsg){
                 Destroy(offScreenMsg);
             }
-            offScreenMsg = messages[0];
+          
             messages.RemoveAt(0);
         }
+
+
         for (int i = 0; i < messages.Count; i++){
             messages[i].transform.position = Vector3.Lerp(messages[i].transform.position, targetpos[i].transform.position, speed * Time.deltaTime);
         }
@@ -42,41 +47,51 @@ public class messageController : MonoBehaviour{
         }
     }
 
-    void AddMsg(string inputText, int c, bool isWifesText){
-        GameObject temp;
-        if (isWifesText){
-             temp = Instantiate(wife_msg_prefab, msgContainer.transform);
-        }
-        else{
-            temp = Instantiate(you_msg_prefab, msgContainer.transform);
-        }
-        //temp.transform.parent = msgContainer.transform;
-        temp.transform.position = spawnPos.position;
-        temp.GetComponentInChildren<Text>().text = inputText + " " + c.ToString(); ;
-        messages.Add(temp);
-    }
+    //void AddMsg(string inputText, int c, bool isWifesText){
+    //    GameObject temp;
+    //    if (isWifesText){
+    //         temp = Instantiate(wife_msg_prefab, msgContainer.transform);
+    //    }
+    //    else{
+    //        temp = Instantiate(you_msg_prefab, msgContainer.transform);
+    //    }
+    //    //temp.transform.parent = msgContainer.transform;
+    //    temp.transform.position = spawnPos.position;
+    //    temp.GetComponentInChildren<Text>().text = inputText + " " + c.ToString(); ;
+    //    messages.Add(temp);
+    //}
     //WIFE
     public void AddMsg(ShopObjectRequest reqs){
-        
-         GameObject temp = Instantiate(wife_msg_prefab, msgContainer.transform);
+
+        GameObject temp = Instantiate(wife_msg_prefab, msgContainer.transform);
 
         //temp.transform.parent = msgContainer.transform;
         temp.transform.position = spawnPos.position;
         temp.GetComponentInChildren<Text>().text = reqs.RequestMessage;
-        messages.Add(temp);
+        if (true)
+        {
+            messages.Add(temp);
+        }
     }
 
     public void AddMsg(bool isWifesText, string inputText){
         GameObject temp;
-        if (isWifesText){
+        if (isWifesText)
+        {
             temp = Instantiate(wife_msg_prefab, msgContainer.transform);
         }
-        else{
+        else
+        {
             temp = Instantiate(you_msg_prefab, msgContainer.transform);
         }
-        //temp.transform.parent = msgContainer.transform;
+        temp.transform.parent = msgContainer.transform;
         temp.transform.position = spawnPos.position;
         temp.GetComponentInChildren<Text>().text = inputText;
-        messages.Add(temp);
+
+        if(true)
+        {
+            messages.Add(temp);
+        }
+       
     }
 }
