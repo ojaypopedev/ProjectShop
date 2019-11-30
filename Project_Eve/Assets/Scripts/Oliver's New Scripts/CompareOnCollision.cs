@@ -17,12 +17,11 @@ public class CompareOnCollision : MonoBehaviour
     {
         print(collision.gameObject.name);
 
-        if (collision.gameObject.GetComponent<ShopObjectReference>())
+        if (collision.gameObject.GetComponent<ShopObjectReference>() && collision.transform.parent == gameObject.transform)
         {
             Destroy(collision.gameObject.GetComponent<Rigidbody>());
-            Destroy(collision.gameObject.GetComponent<Collider>());
+            //Destroy(collision.gameObject.GetComponent<Collider>());
 
-            collision.transform.SetParent(transform);
 
             ShopObjectReference reference = collision.gameObject.GetComponent<ShopObjectReference>();
 
@@ -31,6 +30,8 @@ public class CompareOnCollision : MonoBehaviour
 
             if(!comparer.allDone)
             comparer.Compare();
+
+            //collision.transform.SetParent(transform.parent);
         }
     }
 

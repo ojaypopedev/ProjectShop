@@ -12,6 +12,7 @@ public class Movement : MonoBehaviour
     public float maxSpeed;
 
     public GameObject trolley;
+    public GameObject TrolleyContainer;
     public GameObject pCamera;
 
     public GameObject handContainer;
@@ -51,6 +52,9 @@ public class Movement : MonoBehaviour
 
     bool holdingTrolley;
     bool picked;
+    float delay;
+
+    Vector3 weightOffset;
 
 
     // Start is called before the first frame update
@@ -60,7 +64,7 @@ public class Movement : MonoBehaviour
 
         rightHandStartPoint = RightHand.transform.localPosition;
         leftHandStartPoint = LeftHand.transform.localPosition;
-
+        weightOffset = pCamera.transform.forward;
 
     }
 
@@ -286,8 +290,9 @@ public class Movement : MonoBehaviour
                             currentShopItem.GetComponent<Collider>().enabled = true;
                             currentShopItem.GetComponent<Rigidbody>().useGravity = true;
                             currentShopItem.layer = 11;
+                            currentShopItem.tag = "Trolley";
                             ItemsInTrolley.Add(currentShopItem);
-                            currentShopItem.transform.SetParent(null);
+                            currentShopItem.transform.SetParent(TrolleyContainer.transform);
                             picked = false;
                             state = HandState.Nothing;
 
@@ -353,10 +358,28 @@ public class Movement : MonoBehaviour
         }
         else
         {
-            float offSet = Random.Range(0, ItemsInTrolley.Count*1.1f);
 
-            rb.velocity = (pCamera.transform.forward * speed*(forward?1:-1));
+
+            rb.velocity = (weightOffset * (speed) * (forward ? 1 : -1));
             rb.velocity = new Vector3(rb.velocity.x, 0, rb.velocity.z);
+
+
+
+            delay += 1 * Time.deltaTime;
+
+            float delayTime = ItemsInTrolley.Count / 10;
+
+            if(delayTime > 0.7f)
+            {
+                delayTime = 0.7f;
+            }
+
+            if (delay > delayTime)
+            {
+                weightOffset = pCamera.transform.forward;
+                
+                delay = 0;
+            }
          
 
             if (speed < maxSpeed)

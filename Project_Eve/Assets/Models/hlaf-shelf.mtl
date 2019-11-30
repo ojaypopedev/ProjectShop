@@ -1,0 +1,356 @@
+newmtl CircleFBXASC046002SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+Ni 1.00
+Ks 0.00 0.00 0.00
+Ns 23.00
+newmtl CircleFBXASC046004SG
+illum 4
+Kd 0.80 0.80 0.80
+Ka 0.00 0.00 0.00
+Tf 0.65 0.65 0.65
+Ni 1.00
+Ks 0.40 0.40 0.40
+Ns 39.17
+newmtl CircleFBXASC046005SG
+illum 4
+Kd 0.80 0.80 0.80
+Ka 0.00 0.00 0.00
+Tf 0.65 0.65 0.65
+Ni 1.00
+Ks 0.40 0.40 0.40
+Ns 39.17
+newmtl CubeFBXASC046016SG
+illum 4
+Kd 0.24 0.04 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+Ni 1.00
+Ks 0.12 0.02 0.00
+Ns 23.00
+newmtl CubeFBXASC046033SG
+illum 4
+Kd 0.88 0.88 0.88
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+Ni 1.00
+Ks 0.22 0.22 0.22
+Ns 23.00
+newmtl CubeFBXASC046033SG1
+illum 4
+Kd 0.80 0.80 0.80
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+Ni 1.00
+Ks 0.40 0.40 0.40
+Ns 23.00
+newmtl CubeFBXASC046034SG
+illum 4
+Kd 0.24 0.04 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+Ni 1.00
+Ks 0.06 0.01 0.00
+Ns 23.00
+newmtl CubeFBXASC046035SG
+illum 4
+Kd 0.54 0.54 0.54
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+Ni 1.00
+Ks 0.13 0.13 0.13
+Ns 0.00
+newmtl CubeFBXASC046035SG1
+illum 4
+Kd 0.11 0.80 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+Ni 1.00
+Ks 0.03 0.20 0.00
+Ns 23.00
+newmtl CubeFBXASC046036SG
+illum 4
+Kd 0.80 0.80 0.80
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+Ni 1.00
+Ks 0.20 0.20 0.20
+Ns 23.00
+newmtl CubeFBXASC046036SG1
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+Ni 1.00
+Ks 0.00 0.00 0.00
+Ns 23.00
+newmtl CubeFBXASC046036SG2
+illum 4
+Kd 0.80 0.80 0.80
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+Ni 1.00
+Ks 0.20 0.20 0.20
+Ns 23.00
+newmtl CubeFBXASC046037SG
+illum 4
+Kd 0.80 0.80 0.80
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+Ni 1.00
+Ks 0.27 0.27 0.27
+Ns 85.11
+newmtl CubeFBXASC046039SG
+illum 4
+Kd 0.80 0.00 0.01
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+Ni 1.00
+Ks 0.20 0.00 0.00
+Ns 23.00
+newmtl CubeFBXASC046039SG1
+illum 4
+Kd 0.03 0.05 0.80
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+Ni 1.00
+Ks 0.01 0.01 0.20
+Ns 23.00
+newmtl CubeFBXASC046039SG2
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+Ni 1.00
+Ks 0.00 0.00 0.00
+Ns 23.00
+newmtl CubeFBXASC046039SG3
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+Ni 1.00
+Ks 0.00 0.00 0.00
+Ns 23.00
+newmtl CubeFBXASC046039SG7
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+Ni 1.00
+Ks 0.00 0.00 0.00
+Ns 23.00
+newmtl CubeFBXASC046040SG
+illum 4
+Kd 0.48 0.18 0.49
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+Ni 1.00
+Ks 0.12 0.05 0.12
+Ns 23.00
+newmtl CubeFBXASC046041SG
+illum 4
+Kd 0.43 0.86 1.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+Ni 1.00
+Ks 0.11 0.22 0.25
+Ns 23.00
+newmtl CubeFBXASC046042SG
+illum 4
+Kd 0.80 0.80 0.80
+Ka 0.00 0.00 0.00
+Tf 0.65 0.65 0.65
+Ni 1.00
+Ks 0.40 0.40 0.40
+Ns 39.17
+newmtl CubeFBXASC046042SG1
+illum 4
+Kd 0.80 0.66 0.07
+Ka 0.00 0.00 0.00
+Tf 0.65 0.71 0.97
+Ni 1.00
+Ks 0.40 0.33 0.03
+Ns 39.17
+newmtl CubeFBXASC046043SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+Ni 1.00
+Ks 0.00 0.00 0.00
+Ns 23.00
+newmtl CubeFBXASC046043SG1
+illum 4
+Kd 0.80 0.80 0.80
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+Ni 1.00
+Ks 0.17 0.17 0.17
+Ns 85.11
+newmtl CubeFBXASC046045SG
+illum 4
+Kd 0.20 0.01 0.01
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+Ni 1.00
+Ks 0.05 0.00 0.00
+Ns 23.00
+newmtl CubeFBXASC046046SG
+illum 4
+Kd 0.80 0.31 0.12
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+Ni 1.00
+Ks 0.20 0.08 0.03
+Ns 0.00
+newmtl CubeFBXASC046047SG
+illum 4
+Kd 0.80 0.39 0.13
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+Ni 1.00
+Ks 0.40 0.19 0.07
+Ns 34.00
+newmtl CubeFBXASC046048SG
+illum 4
+Kd 0.80 0.42 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+Ni 1.00
+Ks 0.20 0.10 0.00
+Ns 23.00
+newmtl CubeFBXASC046048SG1
+illum 4
+Kd 0.01 0.06 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+Ni 1.00
+Ks 0.00 0.01 0.00
+Ns 23.00
+newmtl CubeFBXASC046048SG2
+illum 4
+Kd 0.80 0.18 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+Ni 1.00
+Ks 0.20 0.05 0.00
+Ns 23.00
+newmtl CubeFBXASC046048SG3
+illum 4
+Kd 0.24 0.04 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+Ni 1.00
+Ks 0.06 0.01 0.00
+Ns 23.00
+newmtl CubeFBXASC046048SG4
+illum 4
+Kd 0.80 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+Ni 1.00
+Ks 0.20 0.00 0.00
+Ns 23.00
+newmtl CubeFBXASC046048SG5
+illum 4
+Kd 0.80 0.80 0.80
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+Ni 1.00
+Ks 0.20 0.20 0.20
+Ns 34.00
+newmtl CylinderFBXASC046006SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+Ni 1.00
+Ks 0.00 0.00 0.00
+Ns 23.00
+newmtl CylinderFBXASC046006SG1
+illum 4
+Kd 0.13 0.13 0.13
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+Ni 1.00
+Ks 0.03 0.03 0.03
+Ns 23.00
+newmtl CylinderFBXASC046006SG2
+illum 4
+Kd 0.00 0.39 0.80
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+Ni 1.00
+Ks 0.00 0.10 0.20
+Ns 23.00
+newmtl PlaneFBXASC046007SG
+illum 4
+Kd 0.09 0.09 0.09
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+Ni 1.00
+Ks 0.02 0.02 0.02
+Ns 23.00
+newmtl PlaneFBXASC046007SG1
+illum 4
+Kd 0.12 0.06 0.03
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+Ni 1.00
+Ks 0.03 0.01 0.01
+Ns 34.00
+newmtl PlaneFBXASC046007SG2
+illum 4
+Kd 0.47 0.86 1.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+Ni 1.00
+Ks 0.12 0.22 0.25
+Ns 23.00
+newmtl PlaneFBXASC046007SG3
+illum 4
+Kd 0.04 0.04 0.04
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+Ni 1.00
+Ks 0.01 0.01 0.01
+Ns 23.00
+newmtl PlaneFBXASC046007SG4
+illum 4
+Kd 0.80 0.71 0.44
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+Ni 1.00
+Ks 0.20 0.18 0.11
+Ns 23.00
+newmtl PlaneFBXASC046008SG
+illum 4
+Kd 0.15 0.15 0.15
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+Ni 1.00
+Ks 0.08 0.08 0.08
+Ns 0.00
+newmtl SphereSG
+illum 4
+Kd 0.00 0.80 0.74
+Ka 0.00 0.00 0.00
+Tf 1.00 0.65 0.68
+Ni 1.00
+Ks 0.00 0.40 0.37
+Ns 39.17
+newmtl initialShadingGroup
+illum 4
+Kd 0.50 0.50 0.50
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+Ni 1.00
+newmtl lambert2SG
+illum 4
+Kd 1.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+Ni 1.00

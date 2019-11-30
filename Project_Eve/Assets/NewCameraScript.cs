@@ -64,21 +64,12 @@ public class NewCameraScript : MonoBehaviour
 
         if(state == Movement.HandState.Trolley)
         {
-          offset = moveRef.ItemsInTrolley.Count/10;
-
-            if (offset != 0)
-            {
-                lookSpeed = 1f / offset;
-            }
+          
+            lookSpeed = 2.3f;
+            
 
         }
 
-        if(offset == 0)
-        {
-
-            offset = 1;
-
-        }
 
         if (state == Movement.HandState.Trolley || state == Movement.HandState.Nothing)
         {
@@ -129,7 +120,7 @@ public class NewCameraScript : MonoBehaviour
 
             }
 
-            if (Mathf.Abs(rotatedAmount.y) > 30 * offset)
+            if (Mathf.Abs(rotatedAmount.y) > 30)
             {
                 lookPoint.RotateAround(transform.position, transform.right, Input.GetAxis("Mouse Y") * lookSpeed);
                rotatedAmount.y -= Input.GetAxis("Mouse Y");
