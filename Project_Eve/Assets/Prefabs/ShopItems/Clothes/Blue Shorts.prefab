@@ -15,6 +15,8 @@ GameObject:
   - component: {fileID: 1199046932398847360}
   - component: {fileID: 2783758163127161256}
   - component: {fileID: 7715491561457212901}
+  - component: {fileID: 2060095116}
+  - component: {fileID: 2060095117}
   m_Layer: 11
   m_Name: Blue Shorts
   m_TagString: ShopItem
@@ -31,7 +33,7 @@ Transform:
   m_GameObject: {fileID: 5132929917742759723}
   m_LocalRotation: {x: -0.7069834, y: 0, z: 0, w: 0.7072302}
   m_LocalPosition: {x: 0.016757442, y: 0.0030890466, z: 11.383478}
-  m_LocalScale: {x: 52.54219, y: 100, z: 100}
+  m_LocalScale: {x: 171.45372, y: 326.31628, z: 326.31628}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -61,7 +63,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 670224309865224971, guid: 6a2bcbb98ae5f974c9f72efcb09790cc, type: 3}
+  - {fileID: 2100000, guid: db800bc1e7a4ea844848a65677be022f, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -138,3 +140,50 @@ MonoBehaviour:
   _toAdd: 02000000170000001f000000
   _editorTagLength: 3
   shopObject: {fileID: 11400000, guid: 6c018d1b81bff5142a6d42dc34a8b613, type: 2}
+--- !u!59 &2060095116
+HingeJoint:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5132929917742759723}
+  m_ConnectedBody: {fileID: 0}
+  m_Anchor: {x: 0, y: -0.002, z: 0.01}
+  m_Axis: {x: 0, y: 48.4, z: -1036.74}
+  m_AutoConfigureConnectedAnchor: 1
+  m_ConnectedAnchor: {x: 0, y: 0, z: 0}
+  m_UseSpring: 0
+  m_Spring:
+    spring: 0
+    damper: 0
+    targetPosition: 0
+  m_UseMotor: 0
+  m_Motor:
+    targetVelocity: 0
+    force: 0
+    freeSpin: 0
+  m_UseLimits: 0
+  m_Limits:
+    min: 0
+    max: 0
+    bounciness: 0
+    bounceMinVelocity: 0.2
+    contactDistance: 0
+  m_BreakForce: Infinity
+  m_BreakTorque: Infinity
+  m_EnableCollision: 0
+  m_EnablePreprocessing: 1
+  m_MassScale: 1
+  m_ConnectedMassScale: 1
+--- !u!114 &2060095117
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5132929917742759723}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2f45c2f9aecfc9949a7f2ffd7388c581, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
