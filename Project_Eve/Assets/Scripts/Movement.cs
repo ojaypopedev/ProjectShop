@@ -41,6 +41,7 @@ public class Movement : MonoBehaviour
     private GameObject trolleyModel;
 
     private GameObject currentShopItem;
+    private GameObject currentFridge;
 
     public enum HandState {Nothing, Trolley, Item};
     public HandState state = HandState.Nothing;
@@ -302,8 +303,8 @@ public class Movement : MonoBehaviour
                 }
                 else if (picked == false)
                 {
-                  
-                 
+
+
 
                     handChoice.transform.position = Vector3.Lerp(handChoice.transform.position, currentShopItem.transform.position, 10 * Time.deltaTime);
 
@@ -312,13 +313,58 @@ public class Movement : MonoBehaviour
             else
             {
 
-              
+
                 RightHand.transform.localPosition = Vector3.Lerp(RightHand.transform.localPosition, rightHandStartPoint, 5 * Time.deltaTime);
                 LeftHand.transform.localPosition = Vector3.Lerp(LeftHand.transform.localPosition, leftHandStartPoint, 5 * Time.deltaTime);
                 handChoice = null;
             }
 
+            //Fridge Door
 
+
+            if (info.collider.tag == "Fridge")
+            {
+
+
+
+                currentFridge = info.collider.gameObject;
+
+
+                if (info.distance < 18)
+                {
+
+                    currentFridge.GetComponent<MaterialReference>().SetGlow(true);
+
+
+
+                    if (Input.GetMouseButtonDown(0))
+                    {
+                        if (currentFridge.GetComponent<FridgeDoorLeft>())
+                        {
+                            currentFridge.GetComponent<FridgeDoorLeft>().move = !currentFridge.GetComponent<FridgeDoorLeft>().move;
+                        }
+
+
+                        else if (currentFridge.GetComponent<FridgeDoorRight>())
+                        {
+
+                            currentFridge.GetComponent<FridgeDoorRight>().move = !currentFridge.GetComponent<FridgeDoorRight>().move;
+
+                        }
+
+                        
+                    }
+                }
+                else
+                {
+                    if (currentFridge)
+                        currentFridge.GetComponent<MaterialReference>().SetGlow(false);
+
+
+
+
+                }
+            }
         }
     }
 

@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Trolley
   - ShopItem
+  - Fridge
   layers:
   - Default
   - TransparentFX
