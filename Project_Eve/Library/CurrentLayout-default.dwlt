@@ -136,8 +136,8 @@ MonoBehaviour:
     y: 0
     width: 926
     height: 1019
-  m_MinSize: {x: 202, y: 444}
-  m_MaxSize: {x: 4002, y: 8044}
+  m_MinSize: {x: 202, y: 422}
+  m_MaxSize: {x: 4002, y: 8022}
   vertical: 1
   controlID: 33
 --- !u!114 &7
@@ -187,8 +187,8 @@ MonoBehaviour:
     y: 471
     width: 926
     height: 548
-  m_MinSize: {x: 202, y: 222}
-  m_MaxSize: {x: 4002, y: 4022}
+  m_MinSize: {x: 200, y: 200}
+  m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 15}
   m_Panes:
   - {fileID: 15}
@@ -317,8 +317,8 @@ MonoBehaviour:
     y: 0
     width: 479
     height: 681
-  m_MinSize: {x: 275, y: 50}
-  m_MaxSize: {x: 4000, y: 4000}
+  m_MinSize: {x: 277, y: 72}
+  m_MaxSize: {x: 4002, y: 4022}
   m_ActualView: {fileID: 22}
   m_Panes:
   - {fileID: 22}
@@ -468,9 +468,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 37.672012, y: -0.7980804, z: 84.47058}
+    m_Target: {x: 32.507427, y: -9.075012, z: 55.661537}
     speed: 2
-    m_Value: {x: 37.672012, y: -0.7980804, z: 84.47058}
+    m_Value: {x: 32.507427, y: -9.075012, z: 55.661537}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -499,13 +499,13 @@ MonoBehaviour:
       speed: 2
       m_Value: 0
   m_Rotation:
-    m_Target: {x: 0.28387257, y: -0.5163342, z: 0.18643004, w: 0.7862003}
+    m_Target: {x: -0.540801, y: -0.3091651, z: 0.22323403, w: -0.74985015}
     speed: 2
-    m_Value: {x: 0.28525546, y: -0.5104101, z: 0.18429103, w: 0.7900303}
+    m_Value: {x: -0.54075843, y: -0.30914077, z: 0.22321646, w: -0.74979115}
   m_Size:
-    m_Target: 13.861535
+    m_Target: 43.048588
     speed: 2
-    m_Value: 14.514696
+    m_Value: 45.077057
   m_Ortho:
     m_Target: 0
     speed: 2
@@ -696,9 +696,9 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: 1ed5feff
-      m_LastClickedID: -76514
-      m_ExpandedIDs: de34ffff30f5ffff34f5ffff78fbffffc63f0000c0400000bc410000fe450000b4460000b6460000b8460000
+      m_SelectedIDs: 70410000
+      m_LastClickedID: 16752
+      m_ExpandedIDs: 9847fbff3a0bfcffe4f6ffff28fbffff78fbffff863e0000ec410000
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -772,9 +772,9 @@ MonoBehaviour:
     m_IsLocked: 1
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: d0390000
-    m_LastClickedID: 14800
-    m_ExpandedIDs: 00000000443000007c34000088360000d0390000463a0000de3a000000ca9a3b
+    m_SelectedIDs: e6390000
+    m_LastClickedID: 14822
+    m_ExpandedIDs: 000000004e3000008e3400009c360000e6390000603a0000f83a000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -802,7 +802,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 00000000443000007c34000088360000d0390000463a0000de3a0000
+    m_ExpandedIDs: 000000004e3000008e3400009c360000e6390000603a0000f83a0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -943,10 +943,10 @@ MonoBehaviour:
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 199}
-    m_SelectedIDs: 5e330000
-    m_LastClickedID: 13150
-    m_ExpandedIDs: 00000000443000007c34000088360000d0390000463a0000de3a000000ca9a3b
+    scrollPos: {x: 0, y: 21}
+    m_SelectedIDs: 70330000
+    m_LastClickedID: 13168
+    m_ExpandedIDs: 000000004e3000008e3400009c360000e6390000603a0000f83a000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -974,7 +974,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 00000000443000007c34000088360000d0390000463a0000de3a0000
+    m_ExpandedIDs: 000000004e3000008e3400009c360000e6390000603a0000f83a0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -1026,7 +1026,7 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
     m_NewAssetIndexInList: -1
-    m_ScrollPosition: {x: 0, y: 0}
+    m_ScrollPosition: {x: 0, y: 101.5}
     m_GridSize: 64
   m_SkipHiddenPackages: 0
   m_DirectoriesAreaWidth: 116

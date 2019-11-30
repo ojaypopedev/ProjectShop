@@ -1,0 +1,87 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &5883407594737985780
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 2086116614845479547, guid: 86e5ff08b84e1da4ebb2eb06dc3dce38,
+        type: 3}
+      propertyPath: m_Name
+      value: Purple Bowtie
+      objectReference: {fileID: 0}
+    - target: {fileID: 5690561609349700021, guid: 86e5ff08b84e1da4ebb2eb06dc3dce38,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 52.685455
+      objectReference: {fileID: 0}
+    - target: {fileID: 5690561609349700021, guid: 86e5ff08b84e1da4ebb2eb06dc3dce38,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.81
+      objectReference: {fileID: 0}
+    - target: {fileID: 5690561609349700021, guid: 86e5ff08b84e1da4ebb2eb06dc3dce38,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 107.62
+      objectReference: {fileID: 0}
+    - target: {fileID: 5690561609349700021, guid: 86e5ff08b84e1da4ebb2eb06dc3dce38,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.50000006
+      objectReference: {fileID: 0}
+    - target: {fileID: 5690561609349700021, guid: 86e5ff08b84e1da4ebb2eb06dc3dce38,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.50000006
+      objectReference: {fileID: 0}
+    - target: {fileID: 5690561609349700021, guid: 86e5ff08b84e1da4ebb2eb06dc3dce38,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5690561609349700021, guid: 86e5ff08b84e1da4ebb2eb06dc3dce38,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5690561609349700021, guid: 86e5ff08b84e1da4ebb2eb06dc3dce38,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5690561609349700021, guid: 86e5ff08b84e1da4ebb2eb06dc3dce38,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5690561609349700021, guid: 86e5ff08b84e1da4ebb2eb06dc3dce38,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 90.00001
+      objectReference: {fileID: 0}
+    - target: {fileID: 5690561609349700021, guid: 86e5ff08b84e1da4ebb2eb06dc3dce38,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: -90.00001
+      objectReference: {fileID: 0}
+    - target: {fileID: 5595813377785600216, guid: 86e5ff08b84e1da4ebb2eb06dc3dce38,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: f9d50c8171b25dd479f5fab5cf609560, type: 2}
+    - target: {fileID: 6450322057149268867, guid: 86e5ff08b84e1da4ebb2eb06dc3dce38,
+        type: 3}
+      propertyPath: _toAdd.Array.data[0]
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6450322057149268867, guid: 86e5ff08b84e1da4ebb2eb06dc3dce38,
+        type: 3}
+      propertyPath: shopObject
+      value: 
+      objectReference: {fileID: 11400000, guid: 7cd43865e6f01c54da9fff3616109180,
+        type: 2}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 86e5ff08b84e1da4ebb2eb06dc3dce38, type: 3}
