@@ -57,6 +57,7 @@
   <ItemGroup>
      <Compile Include="Assets\DestroyHinge.cs" />
      <Compile Include="Assets\Do you still love me\messageController.cs" />
+     <Compile Include="Assets\fDoors.cs" />
      <Compile Include="Assets\FridgeDoorLeft.cs" />
      <Compile Include="Assets\FridgeDoorRight.cs" />
      <Compile Include="Assets\GameLoop.cs" />
@@ -78,6 +79,7 @@
      <Compile Include="Assets\ShopReference_Editor.cs" />
      <Compile Include="Assets\ShopTag.cs" />
      <Compile Include="Assets\ShowPhone.cs" />
+     <Compile Include="Assets\SwitchLevel.cs" />
      <Compile Include="Assets\teachScript.cs" />
      <Compile Include="Assets\TrolleyPos.cs" />
      <Compile Include="Assets\trolleyRot.cs" />

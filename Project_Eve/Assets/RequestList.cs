@@ -44,7 +44,8 @@ public class RequestList : MonoBehaviour{
     bool done;
     float timer = 0;
     int addTest = 0;
-    bool testComplete;
+    public bool testComplete;
+    public bool win;
 
 
     private void Update(){
@@ -171,6 +172,7 @@ public class RequestList : MonoBehaviour{
                     testComplete = true;
                 }
                 print("Win");
+                win = true;
             }
 
         }
@@ -201,6 +203,9 @@ public class RequestList : MonoBehaviour{
             {
                 current = null;
                 print("Win");
+                msgs.GetComponent<messageController>().AddMsg(true, "Quick, get out before they lock up!");
+
+                win = true;
             }
 
 
