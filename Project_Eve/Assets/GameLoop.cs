@@ -45,7 +45,7 @@ public class GameLoop : MonoBehaviour
             itemsCol.color = temp2;
             
 
-            itemsDone.text = list.index + "/3";
+            itemsDone.text = list.index + "/4";
 
         }
         else if (gameState == RequestList.ModeSelect.challenge)

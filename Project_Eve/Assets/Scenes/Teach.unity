@@ -29489,6 +29489,11 @@ MonoBehaviour:
     positiveTags: 3f0000003e000000
     negativeTags: 
     RequestMessage: We'll also need some christmas crackers.
+    ReplyMessage: Awesome!
+  - name: Eggs
+    positiveTags: 49000000
+    negativeTags: 
+    RequestMessage: I need Eggs... Dont ask just get them. They'll be in the fridge.
     ReplyMessage: That's it! you'll be back soon to get presents!
   inLevel: []
   index: 0

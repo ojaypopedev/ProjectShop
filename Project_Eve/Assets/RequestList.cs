@@ -150,7 +150,7 @@ public class RequestList : MonoBehaviour{
             inLevel = testRequestList;
                 
 
-            if (index < 3)
+            if (index < 4)
             {
                 if (current != inLevel[index])
                 {
