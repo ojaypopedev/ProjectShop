@@ -78,6 +78,7 @@
      <Compile Include="Assets\ShopReference_Editor.cs" />
      <Compile Include="Assets\ShopTag.cs" />
      <Compile Include="Assets\ShowPhone.cs" />
+     <Compile Include="Assets\teachScript.cs" />
      <Compile Include="Assets\TrolleyPos.cs" />
      <Compile Include="Assets\trolleyRot.cs" />
      <Compile Include="Assets\wheelRot.cs" />

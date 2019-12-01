@@ -6,10 +6,12 @@ public class CompareOnCollision : MonoBehaviour
 {
 
     ObjectComparer comparer;
+    GameObject gMananger;
 
     private void Start()
     {
         comparer = GetComponent<ObjectComparer>();
+        gMananger = GameObject.FindGameObjectWithTag("GameManager");
     }
 
 
@@ -17,23 +19,47 @@ public class CompareOnCollision : MonoBehaviour
     {
         print(collision.gameObject.name);
 
-        if (collision.gameObject.GetComponent<ShopObjectReference>() && collision.transform.parent == gameObject.transform)
+        if (gMananger.GetComponent<RequestList>().modeSelect != RequestList.ModeSelect.teach)
         {
-            Destroy(collision.gameObject.GetComponent<Rigidbody>());
-            //Destroy(collision.gameObject.GetComponent<Collider>());
+
+            if (collision.gameObject.GetComponent<ShopObjectReference>() && collision.transform.parent == gameObject.transform && collision.gameObject.tag == "ShopItem")
+            {
+                Destroy(collision.gameObject.GetComponent<Rigidbody>());
 
 
-            ShopObjectReference reference = collision.gameObject.GetComponent<ShopObjectReference>();
 
-            comparer.toCompareToRequest = reference;
-            comparer.toCompGO = collision.gameObject;
+                ShopObjectReference reference = collision.gameObject.GetComponent<ShopObjectReference>();
 
-            if(!comparer.allDone)
-            comparer.Compare();
+                comparer.toCompareToRequest = reference;
+                comparer.toCompGO = collision.gameObject;
 
-            //collision.transform.SetParent(transform.parent);
+                if (!comparer.allDone)
+                    comparer.Compare();
+                collision.gameObject.tag = "Trolley";
+                //Destroy(collision.gameObject.GetComponent<Collider>());
+                collision.gameObject.layer = 11;
+
+                //collision.transform.SetParent(transform.parent);
+            }
         }
+
+        if(gMananger.GetComponent<RequestList>().modeSelect == RequestList.ModeSelect.teach)
+        {
+
+            if (collision.gameObject.GetComponent<ShopObjectReference>() && collision.transform.parent == gameObject.transform && collision.gameObject.tag == "ShopItem")
+            {
+
+                Destroy(collision.gameObject.GetComponent<Rigidbody>());
+                gMananger.GetComponent<RequestList>().TeachItemPick = true;
+                     
+                collision.gameObject.layer = 11;
+                collision.gameObject.tag = "Trolley";
+
+
+            }
+
+
+        }
+
     }
-
-
 }

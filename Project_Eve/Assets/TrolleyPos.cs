@@ -16,7 +16,7 @@ public class TrolleyPos : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
 
         float power = moveRef.rb.velocity.magnitude/5;
@@ -28,7 +28,9 @@ public class TrolleyPos : MonoBehaviour
 
         Vector3 shakeAdd = Vector3.Lerp(Vector3.zero, new Vector3(0, 0 + shake, 0), 0.1f * Time.deltaTime);
 
-        transform.localPosition = pos.transform.position + shakeAdd;
+        transform.position = new Vector3(pos.transform.position.x, pos.transform.position.y, pos.transform.position.z) + shakeAdd;
+
+
         
 
     }

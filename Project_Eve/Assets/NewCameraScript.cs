@@ -76,7 +76,7 @@ public class NewCameraScript : MonoBehaviour
 
             float xAxis = Mathf.Clamp(Input.GetAxis("Mouse X") * lookSpeed, -lookSpeed, lookSpeed);
 
-            print(xAxis);
+            //print(xAxis);
            
             rotatedAmount.x += Input.GetAxis("Mouse X");
             lookPoint.RotateAround(transform.position, transform.right, -Input.GetAxis("Mouse Y") * lookSpeed);

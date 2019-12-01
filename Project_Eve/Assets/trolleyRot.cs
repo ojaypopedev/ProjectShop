@@ -17,15 +17,15 @@ public class trolleyRot : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
 
 
        // if (Input.GetMouseButton(0) && Input.GetMouseButton(1))
         
-            if (moveVel.GetComponent<Rigidbody>().velocity.magnitude > 0.5f)
+            if (moveVel.GetComponent<Rigidbody>().velocity.magnitude > 0.1f)
             {
-                Quaternion temp = Quaternion.Lerp(transform.rotation, Quaternion.LookRotation(moveVel.GetComponent<Rigidbody>().velocity), 2f*Time.deltaTime);
+                 Quaternion temp = Quaternion.Lerp(transform.rotation, Quaternion.LookRotation(moveVel.GetComponent<Rigidbody>().velocity), 2f*Time.deltaTime);
 
                  transform.rotation = temp;
 

@@ -9,7 +9,7 @@ public class ShowPhone : MonoBehaviour
     [SerializeField] Vector3 onPos;
     [SerializeField] Vector3 offPos;
 
-    bool onScreen = false;
+    public bool onScreen = false;
 
     void Update()
     {

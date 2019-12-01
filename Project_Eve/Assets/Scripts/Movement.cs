@@ -289,9 +289,7 @@ public class Movement : MonoBehaviour
                         {
                             handChoice.transform.position = dropPoint.position;
                             currentShopItem.GetComponent<Collider>().enabled = true;
-                            currentShopItem.GetComponent<Rigidbody>().useGravity = true;
-                            currentShopItem.layer = 11;
-                            currentShopItem.tag = "Trolley";
+                            currentShopItem.GetComponent<Rigidbody>().useGravity = true;                                                     
                             ItemsInTrolley.Add(currentShopItem);
                             currentShopItem.transform.SetParent(TrolleyContainer.transform);
                             picked = false;
