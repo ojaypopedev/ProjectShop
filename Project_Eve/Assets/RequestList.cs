@@ -203,9 +203,12 @@ public class RequestList : MonoBehaviour{
             {
                 current = null;
                 print("Win");
-                msgs.GetComponent<messageController>().AddMsg(true, "Quick, get out before they lock up!");
+                if (win == false)
+                {
+                    msgs.GetComponent<messageController>().AddMsg(true, "Quick, get out before they lock up!");
 
-                win = true;
+                    win = true;
+                }
             }
 
 
