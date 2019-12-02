@@ -15,9 +15,9 @@ public class DestroyHinge : MonoBehaviour
     {
         if (transform.parent)
         {
-            if (transform.parent.name == "Left Hand" || transform.parent.name == "Right Hand")
+            if (transform.parent.name == "HandLeft" || transform.parent.name == "HandRight")
             {
-
+                
                 Destroy(GetComponent<HingeJoint>());
 
             }

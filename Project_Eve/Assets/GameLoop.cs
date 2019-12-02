@@ -8,6 +8,7 @@ public class GameLoop : MonoBehaviour
 {
 
     public RequestList.ModeSelect gameState = RequestList.ModeSelect.test;
+    public GameObject velocity;
     float totalTime = 200;
     float timeLeft;
 
@@ -24,6 +25,8 @@ public class GameLoop : MonoBehaviour
 
     RequestList list;
 
+    bool started;
+
     private void Start()
     {
         timeLeft = totalTime;
@@ -36,6 +39,10 @@ public class GameLoop : MonoBehaviour
 
     private void Update()
     {
+        if (velocity.GetComponent<Rigidbody>().velocity.magnitude > 0.5f)
+        {
+            started = true;
+        }
 
         if (timeLeft < 180 && !warnings[0])
         {
@@ -81,10 +88,12 @@ public class GameLoop : MonoBehaviour
         else if (gameState == RequestList.ModeSelect.challenge)
         {
 
-
-            timeLeft -= Time.deltaTime;
-            timer.text = (timeInMinSec(timeLeft));
-            itemsDone.text = list.index + "/5";
+            if (started == true)
+            {
+                timeLeft -= Time.deltaTime;
+                timer.text = (timeInMinSec(timeLeft));
+                itemsDone.text = list.index + "/5";
+            }
         }
         else
         {

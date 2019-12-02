@@ -36,7 +36,7 @@ namespace Shop
 
         //New Stuff
         KitchenStuff, Technology, Bricks, BingBong, Television, Headphones, Knives, aftershave, Portable,
-        Console, Pan,
+        Console, Pan, Guitar, Instrument, Piano, Trumpet, Saxophone, Microphone
 
     }
 
