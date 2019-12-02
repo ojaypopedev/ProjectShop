@@ -16,7 +16,7 @@ public class ShopReference_Editor : Editor
 
     public override void OnInspectorGUI()
     {
-        Debug.Log(Path);
+       // Debug.Log(Path);
 
 
         ShopObjectReference t = (ShopObjectReference)target;

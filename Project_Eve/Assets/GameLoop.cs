@@ -8,7 +8,7 @@ public class GameLoop : MonoBehaviour
 {
 
     public RequestList.ModeSelect gameState = RequestList.ModeSelect.test;
-    float totalTime = 180;
+    float totalTime = 200;
     float timeLeft;
 
 
@@ -17,6 +17,10 @@ public class GameLoop : MonoBehaviour
     Vector3 timerScaleOriginal;
     [SerializeField] Text itemsDone;
     [SerializeField] Text itemsCol;
+
+    public GameObject bingBong;
+
+    bool[] warnings = { false, false, false, false, false };
 
     RequestList list;
 
@@ -32,8 +36,34 @@ public class GameLoop : MonoBehaviour
 
     private void Update()
     {
-        
-        if(gameState == RequestList.ModeSelect.test)
+
+        if (timeLeft < 180 && !warnings[0])
+        {
+            warnings[0] = true;
+            GetComponent<SoundManager>().playSound(1);
+        }
+        if (timeLeft < 120 && !warnings[1])
+        {
+            warnings[1] = true;
+            GetComponent<SoundManager>().playSound(2);
+        }
+        if (timeLeft < 60 && !warnings[2])
+        {
+            warnings[2] = true;
+            GetComponent<SoundManager>().playSound(3);
+        }
+        if (timeLeft < 0 && !warnings[3])
+        {
+            warnings[3] = true;
+            GetComponent<SoundManager>().playSound(4);
+        }
+        if(FindObjectOfType<Movement>().ItemsInTrolley.Contains(bingBong) && !warnings[4])
+        {
+            warnings[4] = true;
+            GetComponent<SoundManager>().playSound(5);
+        }
+
+        if (gameState == RequestList.ModeSelect.test)
         {
             Color temp = itemsDone.color;
             Color temp2 = itemsCol.color;

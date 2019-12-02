@@ -72,6 +72,8 @@ public class messageController : MonoBehaviour{
         {
             messages.Add(temp);
         }
+
+        GetComponent<AudioSource>().Play();
     }
 
     public void AddMsg(bool isWifesText, string inputText){
@@ -92,6 +94,8 @@ public class messageController : MonoBehaviour{
         {
             messages.Add(temp);
         }
+
+        GetComponent<AudioSource>().Play();
        
     }
 }
