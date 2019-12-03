@@ -10,6 +10,8 @@ public class GameLoop : MonoBehaviour
     public RequestList.ModeSelect gameState = RequestList.ModeSelect.test;
     public GameObject velocity;
     public GameObject loseScreen;
+    public Text winText;
+    public bool win;
     float totalTime = 200;
     float timeLeft;
 
@@ -95,7 +97,7 @@ public class GameLoop : MonoBehaviour
             {
                 timeLeft -= Time.deltaTime;
                 timer.text = (timeInMinSec(timeLeft));
-                itemsDone.text = list.index + "/5";
+                itemsDone.text = list.index + "/8";
             }
         }
         else

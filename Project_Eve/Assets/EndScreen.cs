@@ -17,7 +17,7 @@ public class EndScreen : MonoBehaviour
         
     }
 
-    void LoadLevelAgain()
+    public void LoadLevelAgain()
     {
 
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);

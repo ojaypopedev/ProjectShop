@@ -245,7 +245,7 @@ public class Movement : MonoBehaviour
 
             if (state == HandState.Item)
             {
-
+                rb.velocity = Vector3.zero;
                 if (!handChoice)
                 {
                     float dist = Vector3.Distance(currentShopItem.transform.position, LeftHand.transform.position);
@@ -396,7 +396,7 @@ public class Movement : MonoBehaviour
        // handContainer.transform.position = Vector3.MoveTowards(handContainer.transform.position, targetTransforms[1].position, 0.5f);
        // handContainer.transform.rotation = Quaternion.Euler(Vector3.MoveTowards(handContainer.transform.rotation.eulerAngles, targetTransforms[1].rotation, 0.5f));
 
-        if (waitTimer < 0.5f)
+        if (waitTimer < 0.08f)
         {
             waitTimer += Time.deltaTime;
         }

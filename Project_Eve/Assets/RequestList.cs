@@ -47,6 +47,7 @@ public class RequestList : MonoBehaviour{
     int addTest = 0;
     public bool testComplete;
     public bool win;
+    
 
 
     private void Update(){
@@ -179,7 +180,7 @@ public class RequestList : MonoBehaviour{
         }
         if (modeSelect == ModeSelect.challenge){
             
-            while(inLevel.Count < 5)
+            while(inLevel.Count < 8)
             {
                 int toUse = Random.Range(0, itemRequestList.Count);
 
@@ -188,7 +189,7 @@ public class RequestList : MonoBehaviour{
 
             }
            
-            if(index < 5)
+            if(index < 8)
             {
                 if(current != inLevel[index])
                 {
