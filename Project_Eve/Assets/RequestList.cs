@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using Shop;
+using UnityEngine.UI;
 
 public class RequestList : MonoBehaviour{
     public enum ModeSelect {teach,test,challenge}

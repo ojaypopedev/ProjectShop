@@ -2,11 +2,14 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class SwitchLevel : MonoBehaviour
 {
 
     public GameObject gManager;
+    public Image fade;
+    bool screenFade;
 
     // Start is called before the first frame update
     void Start()
@@ -17,6 +20,24 @@ public class SwitchLevel : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
+        if(screenFade == true)
+        {
+
+            Color temp = fade.color;
+
+            temp.a += 0.1f;
+
+            fade.color = temp;
+
+            if(temp.a >= 1)
+            {
+                Cursor.lockState = CursorLockMode.None;
+                SceneManager.LoadScene(1);
+            }
+
+
+        }
         
     }
 
@@ -26,8 +47,8 @@ public class SwitchLevel : MonoBehaviour
         {
             if (col.gameObject.tag == "Trolley")
             {
-
-                SceneManager.LoadScene(1);
+                screenFade = true;
+                
 
             }
         }

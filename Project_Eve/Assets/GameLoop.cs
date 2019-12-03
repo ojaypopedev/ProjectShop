@@ -9,6 +9,7 @@ public class GameLoop : MonoBehaviour
 
     public RequestList.ModeSelect gameState = RequestList.ModeSelect.test;
     public GameObject velocity;
+    public GameObject loseScreen;
     float totalTime = 200;
     float timeLeft;
 
@@ -33,6 +34,7 @@ public class GameLoop : MonoBehaviour
 
         timerScaleOriginal = timer.GetComponent<RectTransform>().localScale;
 
+        loseScreen.active = false;
 
         list = GetComponent<RequestList>();
     }
@@ -63,6 +65,7 @@ public class GameLoop : MonoBehaviour
         {
             warnings[3] = true;
             GetComponent<SoundManager>().playSound(4);
+            loseScreen.active = true;
         }
         if(FindObjectOfType<Movement>().ItemsInTrolley.Contains(bingBong) && !warnings[4])
         {
